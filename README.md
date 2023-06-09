@@ -1,4 +1,4 @@
-# Howto install the Windows version Steam on macOS Sonoma Beta
+# Howto install the Windows version of Steam on macOS Sonoma Beta
 
 We will install the x86 version Homebrew in order to be able to use Apple's modified version of `Wine` and to install the Windows version Steam.
 
