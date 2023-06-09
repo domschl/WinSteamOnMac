@@ -110,7 +110,7 @@ Apple provides a few scripts to start games, which we will not use: `gameporting
 We use what we learned from inspecting the scripts and directly start the Steam setup with:
 
 ```bash
-cd ~/Win10
+cd ~/Win10/drive_c
 MTL_HUD_ENABLED=0 WINEESYNC=1 WINEPREFIX=/Users/your-user-name/Win10 /usr/local/opt/game-porting-toolkit/bin/wine64 SteamSetup.exe
 ```
 
