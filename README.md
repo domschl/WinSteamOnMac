@@ -63,7 +63,9 @@ which is our `wine` prefix (Apple uses the example of `my-game-prefix`, we'll go
 
 ### Update notes
 
-**Notes:** This section is only for updates later, once the complete installation was finished. For initial installation, continue with **Continue installation**.
+**Note:** This section is only for updates later, once the complete installation was finished. For initial installation, continue with **Continue installation**.
+
+**Note:** Update doesn't seem to be a straight foreward process. You might need to completely start over, if things go wrong. 
 
 If you want to update your x86 homebrew at a later point:
 
@@ -83,6 +85,11 @@ ditto /Volumes/Game\ Porting\ Toolkit-1.0/lib/ `brew86 --prefix game-porting-too
 ```
 
 That's all that's needed for an update. Below information is only initial install.
+
+If steam doesn't start after an update, you can either
+
+- try to re-install steam: `WINEPREFIX=/Users/your-user-name/Win10 /usr/local/opt/game-porting-toolkit/bin/wine64 SteamSetup.exe` (replace `your-user-name`), or:
+- completely remove your homebrew x86 installation at `/usr/local/` and start over.
 
 ### Continue installation
 
