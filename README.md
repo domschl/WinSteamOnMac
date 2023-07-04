@@ -60,6 +60,32 @@ brew86 -v install apple/apple/game-porting-toolkit
 Now create a directory that will contain all the Windows stuff, Steam and any games you download. Here' we'll use '~/Win10',
 which is our `wine` prefix (Apple uses the example of `my-game-prefix`, we'll go with `Win10`):
 
+
+### Update notes
+
+**Notes:** This section is only for updates later, once the complete installation was finished. For initial installation, continue with **Continue installation**.
+
+If you want to update your x86 homebrew at a later point:
+
+```bash
+arch -x86_64 zsh
+alias brew86=/usr/local/bin/brew
+brew86 update
+brew86 upgrade
+```
+
+This will update your x86 homebrew environment and automatically build the latest `game-porting-toolkit`.
+
+Then you will need to download the latest [game-porting-toolkit](https://developer.apple.com/download/all/?q=game%20porting%20toolkit) from apple to update the libraries in your wine prefix. Open the download and:
+
+```bash
+ditto /Volumes/Game\ Porting\ Toolkit-1.0/lib/ `brew86 --prefix game-porting-toolkit`/lib/
+```
+
+That's all that's needed for an update. Below information is only initial install.
+
+### Continue installation
+
 ```bash
 mkdir ~/Win10
 WINEPREFIX=~/Win10 `brew86 --prefix game-porting-toolkit`/bin/wine64 winecfg
@@ -144,3 +170,7 @@ MTL_HUD_ENABLED=0 WINEESYNC=1 WINEPREFIX=/Users/your-user-name/Win10 /usr/local/
 Again, make sure to replace `your-user-name` with the correct value!
 
 Add an icon to the shortcut, and you are ready to go. The shortcut can be put into the doc, and now you simply can directly start Steam for Windows!
+
+### History
+
+2023-07-04: Section **Update notes** added. Apple has published a new version 1.0.2 of the game-porting toolkit.
