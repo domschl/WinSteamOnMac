@@ -15,6 +15,7 @@ This contains a Readme that outlines the process, but here we will customize it,
 ## Step-by-step installation
 
 - You **must** run the Beta of macOS Sonoma!
+- game-porting-toolkit 1.0.2 requires at least beta 3 or Sonoma.
 - Open a terminal (or iTerm2)
 - Make sure that rosetta is installed by entering:
 
@@ -66,6 +67,8 @@ which is our `wine` prefix (Apple uses the example of `my-game-prefix`, we'll go
 **Note:** This section is only for updates later, once the complete installation was finished. For initial installation, continue with **Continue installation**.
 
 **Note:** Update doesn't seem to be a straight foreward process. You might need to completely start over, if things go wrong. 
+
+- `game-porting-toolkit` version 1.0.2 seems to require at least beta 3 of macOS Sonoma.
 
 If you want to update your x86 homebrew at a later point:
 
