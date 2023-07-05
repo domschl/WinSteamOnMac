@@ -4,7 +4,7 @@ We will install the x86 version Homebrew in order to be able to use Apple's modi
 
 We will make sure that our existing environment (and the Apple silicon version of Homebrew we need for 'serious' work) remains undisturbed.
 
-<img src="https://github.com/domschl/WinSteamOnMac/blob/main/Resources/WindowsSteamOnMac.png" width="30%" align="right">
+<img src="https://github.com/domschl/WinSteamOnMac/blob/main/Resources/WindowsSteamOnMac.png" width="50%" align="right">
 
 ## Preparations:
 
