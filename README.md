@@ -104,7 +104,8 @@ WINEPREFIX=~/Win10 `brew86 --prefix game-porting-toolkit`/bin/wine64 winecfg
 ```
 
 Note: we use the alias `brew86` we defined above.
-![](Resources/winecfg.png)
+
+<img src="https://github.com/domschl/WinSteamOnMac/blob/main/Resources/winecfg.png" width="30%" align="right">
 
 This should start the `winecfg` program, a small setup for our `wine` environment. Select `Windows 10`, and `Apply`, 
 
@@ -112,7 +113,7 @@ MTL_HUD_ENABLED=0 WINEESYNC=1 WINEPREFIX=/Users/dsc/my-game-prefix /usr/local/op
 
 - Now open the Game Porting Toolkit which you downloaded above.
 
-![](Resources/gameporting.png)
+<img src="https://github.com/domschl/WinSteamOnMac/blob/main/Resources/gameporting.png" width="60%">
 
 From your Terminal, it should be available at:
 
