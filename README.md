@@ -16,8 +16,10 @@ This contains a Readme that outlines the process, but here we will customize it,
 
 ## Step-by-step installation
 
-- You **must** run the Beta of macOS Sonoma!
-- game-porting-toolkit 1.0.2 requires at least beta 3 or Sonoma.
+**Note:** See `Update notes` below, if you did already install an older version!
+
+- You **must** run the latest Beta of macOS Sonoma!
+- `game-porting-toolkit` versioning schemes used by Apple are inconsistent and have changed over time: there are `1.0.x` versions and `Beta x` versions. At the time of this update, it seems `x=3` for both schemes. Simply choose the latest by date and by hightest version number.
 - Open a terminal (or iTerm2)
 - Make sure that rosetta is installed by entering:
 
@@ -70,7 +72,7 @@ which is our `wine` prefix (Apple uses the example of `my-game-prefix`, we'll go
 
 **Note:** Update doesn't seem to be a straight foreward process. You might need to completely start over, if things go wrong. 
 
-- `game-porting-toolkit` version 1.0.2 seems to require at least beta 3 of macOS Sonoma.
+- Make sure to use both the latest beta of macOS Sonoma and the latest `game-porting-toolkit` togehter.
 
 If you want to update your x86 homebrew at a later point:
 
@@ -89,7 +91,7 @@ Then you will need to download the latest [game-porting-toolkit](https://develop
 ditto /Volumes/Game\ Porting\ Toolkit-1.0/lib/ `brew86 --prefix game-porting-toolkit`/lib/
 ```
 
-That's all that's needed for an update. Below information is only initial install.
+That's all that's needed for an update. Below information applies only to the initial installation.
 
 If steam doesn't start after an update, you can either
 
@@ -186,4 +188,5 @@ Add an icon to the shortcut, and you are ready to go. The shortcut can be put in
 
 ### History
 
+2023-08-14: Updates for `game-porting-tookit` Beta 3 alias 1.0.3 and Sonoma Beta 5. (No significant changes to the update procedure).
 2023-07-04: Section **Update notes** added. Apple has published a new version 1.0.2 of the game-porting toolkit.
