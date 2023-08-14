@@ -6,6 +6,8 @@ We will make sure that our existing environment (and the Apple silicon version o
 
 <img src="https://github.com/domschl/WinSteamOnMac/blob/main/Resources/WindowsSteamOnMac.png" width="50%" align="right">
 
+This guide is only tested for Apple Silicon machines.
+
 ## Preparations:
 
 - Go to [Apple Games](https://developer.apple.com/games/) in order to download the [game porting toolkit](https://developer.apple.com/download/all/?q=game%20porting%20toolkit)
