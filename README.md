@@ -100,11 +100,18 @@ ditto /Volumes/Game\ Porting\ Toolkit-1.0/lib/ `brew86 --prefix game-porting-too
 
 That's all that's needed for an update. Below information applies only to the initial installation.
 
+#### Update trouble
+
 If steam doesn't start after an update:
 
-- have _patience_! First startup of steam seems to take several minutes. Sometimes a huge error-box displayed. When asked, select 'restart Steam' as response to possible errors. In many cases, the steam client at some point does appear!
+- have _patience_! First startup of steam seems to take several minutes. Sometimes a huge error-box displayed. Click on the box to make sure it has active input focus and press `Enter` to make it vanish.
+-  When asked, select 'restart Steam' as response to possible errors. In many cases, the steam client at some point does appear!
 - try to re-install steam: `WINEPREFIX=/Users/your-user-name/Win10 /usr/local/opt/game-porting-toolkit/bin/wine64 SteamSetup.exe` (replace `your-user-name`), or:
 - completely remove your homebrew x86 installation at `/usr/local/` and start over.
+
+#### Problems after Steam Client self-update
+
+- Self-update of steam client gets stuck. Wait for things to 'settle', then restart your computer to eliminate old rogue processes. It might be necessary to manually kill `wine64-preloader` instances before a restart is possible. After restart, the Steam Client update should work fine.
 
 ### Continue installation
 
