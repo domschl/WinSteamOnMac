@@ -8,6 +8,10 @@ We will make sure that our existing environment (and the Apple silicon version o
 
 This guide is only tested for Apple Silicon machines.
 
+## Latest tested versions
+
+- 2023-08-14: the combination of Sonoma Beta 5 and apple `game-porting-toolkit` 1.0.3 alias 1.0 Beta 3 shows some _significant_ performance improvements!
+
 ## Preparations:
 
 - Go to [Apple Games](https://developer.apple.com/games/) in order to download the [game porting toolkit](https://developer.apple.com/download/all/?q=game%20porting%20toolkit)
