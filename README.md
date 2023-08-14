@@ -86,6 +86,7 @@ brew86 upgrade
 ```
 
 This will update your x86 homebrew environment and automatically build the latest `game-porting-toolkit`.
+Remember, the build process will take about 30min even on a very fast machine!
 
 Then you will need to download the latest [game-porting-toolkit](https://developer.apple.com/download/all/?q=game%20porting%20toolkit) from apple to update the libraries in your wine prefix. Open the download and:
 
@@ -95,8 +96,9 @@ ditto /Volumes/Game\ Porting\ Toolkit-1.0/lib/ `brew86 --prefix game-porting-too
 
 That's all that's needed for an update. Below information applies only to the initial installation.
 
-If steam doesn't start after an update, you can either
+If steam doesn't start after an update:
 
+- have _patience_! First startup of steam seems to take several minutes. Sometimes a huge error-box displayed. When asked, select 'restart Steam' as response to possible errors. In many cases, the steam client at some point does appear!
 - try to re-install steam: `WINEPREFIX=/Users/your-user-name/Win10 /usr/local/opt/game-porting-toolkit/bin/wine64 SteamSetup.exe` (replace `your-user-name`), or:
 - completely remove your homebrew x86 installation at `/usr/local/` and start over.
 
