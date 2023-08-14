@@ -190,5 +190,5 @@ Add an icon to the shortcut, and you are ready to go. The shortcut can be put in
 
 ### History
 
-2023-08-14: Updates for `game-porting-tookit` Beta 3 alias 1.0.3 and Sonoma Beta 5. (No significant changes to the update procedure).
-2023-07-04: Section **Update notes** added. Apple has published a new version 1.0.2 of the game-porting toolkit.
+- 2023-08-14: Updates for `game-porting-tookit` Beta 3 alias 1.0.3 and Sonoma Beta 5. (No significant changes to the update procedure).
+- 2023-07-04: Section **Update notes** added. Apple has published a new version 1.0.2 of the game-porting toolkit.
