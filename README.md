@@ -1,4 +1,4 @@
-# Howto install the Windows version of Steam on macOS Sonoma Beta
+# Howto install the Windows version of Steam on macOS Sonoma
 
 We will install the x86 version Homebrew in order to be able to use Apple's modified version of `Wine` and to install the Windows version Steam.
 
@@ -10,7 +10,7 @@ This guide is only tested for Apple Silicon machines.
 
 ## Latest tested versions
 
-- 2023-08-14: the combination of Sonoma Beta 5 and apple `game-porting-toolkit` 1.0.3 alias 1.0 Beta 3 shows some _significant_ performance improvements!
+- 2023-09-24: the combination of Sonoma RC and apple `game-porting-toolkit` 1.0.4 alias 1.0 Beta 4.
 
 ## Preparations:
 
@@ -24,8 +24,8 @@ This contains a Readme that outlines the process, but here we will customize it,
 
 **Note:** See `Update notes` below, if you did already install an older version!
 
-- You **must** run the latest Beta of macOS Sonoma!
-- `game-porting-toolkit` versioning schemes used by Apple are inconsistent and have changed over time: there are `1.0.x` versions and `Beta x` versions. At the time of this update, it seems `x=3` for both schemes. Simply choose the latest by date and by hightest version number.
+- You **must** run the RC or Release version of macOS Sonoma!
+- `game-porting-toolkit` versioning schemes used by Apple are inconsistent and have changed over time: there are `1.0.x` versions and `Beta x` versions. At the time of this update, it seems `x=4` for both schemes. Simply choose the latest by date and by hightest version number.
 - Open a terminal (or iTerm2)
 - Make sure that rosetta is installed by entering:
 
@@ -95,8 +95,10 @@ Remember, the build process will take about 30min even on a very fast machine!
 Then you will need to download the latest [game-porting-toolkit](https://developer.apple.com/download/all/?q=game%20porting%20toolkit) from apple to update the libraries in your wine prefix. Open the download and:
 
 ```bash
-ditto /Volumes/Game\ Porting\ Toolkit-1.0/lib/ `brew86 --prefix game-porting-toolkit`/lib/
+ditto /Volumes/Game\ Porting\ Toolkit-1.0/redist/lib/ `brew86 --prefix game-porting-toolkit`/lib/
 ```
+
+**Note:** The layout of the game porting toolkit changed between beta 3 and beta 4, since beta 4 the libraries are now in `redist/lib` (beta3 and earlier: just `lib`.
 
 That's all that's needed for an update. Below information applies only to the initial installation.
 
@@ -141,10 +143,10 @@ ls /Volumes/Game\ Porting\ Toolkit-1.0/
 Make sure you see the files of the toolkit and then:
 
 ```bash
-ditto /Volumes/Game\ Porting\ Toolkit-1.0/lib/ `brew86 --prefix game-porting-toolkit`/lib/
+ditto /Volumes/Game\ Porting\ Toolkit-1.0/redist/lib/ `brew86 --prefix game-porting-toolkit`/lib/
 ```
 
-This copies the required apple libraries into your `wine` installation.
+This copies the required apple libraries into your `wine` installation. Note that since beta-4, the libs on the image from Apple are in `redist/lib` (older versions: `lib`)
 
 Now copy the Windows setup of steam (we assume you downloaded into the default ~/Downloads` folder) into your new Windows drive:
 
@@ -203,5 +205,6 @@ Add an icon to the shortcut, and you are ready to go. The shortcut can be put in
 
 ### History
 
+- 2023-09-24: Retest with Sonoma RC, `game-porting-toolkit` Beta 4 (Note: library path on Apple's IMG has changed from `lib` to `redist/lib`.
 - 2023-08-14: Updates for `game-porting-tookit` Beta 3 alias 1.0.3 and Sonoma Beta 5. (No significant changes to the update procedure).
 - 2023-07-04: Section **Update notes** added. Apple has published a new version 1.0.2 of the game-porting toolkit.
