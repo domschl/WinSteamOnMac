@@ -10,7 +10,7 @@ This guide is only tested for Apple Silicon machines.
 
 ## Latest tested versions
 
-- 2023-09-24: the combination of Sonoma RC and apple `game-porting-toolkit` 1.0.4 alias 1.0 Beta 4.
+- 2023-09-24: the combination of macOS Sonoma 14.0 and apple `game-porting-toolkit` 1.0.4 alias 1.0 Beta 4.
 
 ## Preparations:
 
@@ -205,6 +205,7 @@ Add an icon to the shortcut, and you are ready to go. The shortcut can be put in
 
 ### History
 
+- 2023-09-26: macOS Sonoma 14.0 Release tested ok. No changes.
 - 2023-09-24: Retest with Sonoma RC, `game-porting-toolkit` Beta 4 (Note: library path on Apple's IMG has changed from `lib` to `redist/lib`.
 - 2023-08-14: Updates for `game-porting-tookit` Beta 3 alias 1.0.3 and Sonoma Beta 5. (No significant changes to the update procedure).
 - 2023-07-04: Section **Update notes** added. Apple has published a new version 1.0.2 of the game-porting toolkit.
