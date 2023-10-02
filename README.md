@@ -24,7 +24,7 @@ This contains a Readme that outlines the process, but here we will customize it,
 
 **Note:** See `Update notes` below, if you did already install an older version!
 
-- You **must** run the RC or Release version of macOS Sonoma!
+- You **must** run Release version of macOS Sonoma!
 - `game-porting-toolkit` versioning schemes used by Apple are inconsistent and have changed over time: there are `1.0.x` versions and `Beta x` versions. At the time of this update, it seems `x=4` for both schemes. Simply choose the latest by date and by hightest version number.
 - Open a terminal (or iTerm2)
 - Make sure that rosetta is installed by entering:
@@ -108,6 +108,9 @@ If steam doesn't start after an update:
 
 - have _patience_! First startup of steam seems to take several minutes. Sometimes a huge error-box displayed. Click on the box to make sure it has active input focus and press `Enter` to make it vanish.
 -  When asked, select 'restart Steam' as response to possible errors. In many cases, the steam client at some point does appear!
+
+##### Last resort on failed updates
+
 - try to re-install steam: `WINEPREFIX=/Users/your-user-name/Win10 /usr/local/opt/game-porting-toolkit/bin/wine64 SteamSetup.exe` (replace `your-user-name`), or:
 - completely remove your homebrew x86 installation at `/usr/local/` and start over.
 
