@@ -68,7 +68,7 @@ brew86 tap apple/apple http://github.com/apple/homebrew-apple
 brew86 -v install apple/apple/game-porting-toolkit
 ```
 
-Now create a directory that will contain all the Windows stuff, Steam and any games you download. Here' we'll use '~/Win10',
+Now create a directory that will contain all the Windows stuff, Steam and any games you download. Here we'll use `~/Win10`,
 which is our `wine` prefix (Apple uses the example of `my-game-prefix`, we'll go with `Win10`):
 
 
