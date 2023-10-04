@@ -15,7 +15,7 @@ This guide is only tested for Apple Silicon machines.
 ## Preparations:
 
 - Go to [Apple Games](https://developer.apple.com/games/) in order to download the [game porting toolkit](https://developer.apple.com/download/all/?q=game%20porting%20toolkit)
-- [XCode >=15.0.0](https://developer.apple.com/download/all/?q=xcode) is mandatory to be able to install `game-porting-toolkit`
+- [XCode >=15.0.0](https://developer.apple.com/download/all/?q=xcode) is required to be able to install `game-porting-toolkit`
 
 This contains a Readme that outlines the process, but here we will customize it, in order to run Steam.
 
@@ -26,7 +26,7 @@ This contains a Readme that outlines the process, but here we will customize it,
 **Note:** See `Update notes` below, if you did already install an older version!
 
 - You **must** run Release version of macOS Sonoma!
-- As on `game-porting-toolkit` version `1.0.4` supports **Apple Silicone ONLY**! No Intel chips support yet.
+- As of version `1.0.4` of the `game-porting-toolkit`, only Apple Silicon Macs are supported. No intel support.
 - `game-porting-toolkit` versioning schemes used by Apple are inconsistent and have changed over time: there are `1.0.x` versions and `Beta x` versions. At the time of this update, it seems `x=4` for both schemes. Simply choose the latest by date and by hightest version number.
 - Open a terminal (or iTerm2)
 - Make sure that rosetta is installed by entering:
