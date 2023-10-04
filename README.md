@@ -26,7 +26,7 @@ This contains a Readme that outlines the process, but here we will customize it,
 **Note:** See `Update notes` below, if you did already install an older version!
 
 - You **must** run Release version of macOS Sonoma!
-- As of version `1.0.4` of the `game-porting-toolkit`, only Apple Silicon Macs are supported. No intel support.
+- As of version `1.0.4` of the `game-porting-toolkit`, only Apple Silicon Macs are supported. No Intel support.
 - `game-porting-toolkit` versioning schemes used by Apple are inconsistent and have changed over time: there are `1.0.x` versions and `Beta x` versions. At the time of this update, it seems `x=4` for both schemes. Simply choose the latest by date and by hightest version number.
 - Open a terminal (or iTerm2)
 - Make sure that rosetta is installed by entering:
