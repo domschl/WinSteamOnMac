@@ -189,13 +189,18 @@ Make sure to replace `your-user-name` above with the output of the `pwd` command
 
 This should now start the Steam setup process. Be patient.
 
-If you get a failure box with "restart Steam?", try that, and on continued failure exit, and after killing any remaining `wine64-preloader` instances using 'Activity Monitor' , started Steam directly:
+- If you get a failure dialog box with several options, as "Restart Steam?", try that, and on continued failure exit the dialog,
+- Reboot(!)   (There seem to be rogue processes that prevent successful retries without reboot)
+- And after reboot, open 'Terminal' and start Steam directly:
 
 ```bash
+cd ~/Win10/drive_c
 MTL_HUD_ENABLED=0 WINEESYNC=1 WINEPREFIX=/Users/your-user-name/Win10 /usr/local/opt/game-porting-toolkit/bin/wine64 Program\ Files\ \(x86\)/Steam/Steam.exe
 ```
 
-This again took some time, but then the Steam logon appears! Horray!
+(replace `your-user-name`!)
+
+This took some time, but then the Steam logon appears! Horray!
 
 Login, and start installing your favorite Windows games...
 
@@ -229,6 +234,7 @@ Add an icon to the shortcut, and you are ready to go. The shortcut can be put in
 
 ### History
 
+- 2023-10-06: New installations with Xcode 15, Sonoma 14.0 release and `game-porting-toolkit` 1.0 retested, ok.
 - 2023-10-06: Small fixes for release version of `game-porting-toolkit` 1.0, Uninstallation and troubleshooting notes.
 - 2023-09-26: macOS Sonoma 14.0 Release tested ok. No changes.
 - 2023-09-24: Retest with Sonoma RC, `game-porting-toolkit` Beta 4 (Note: library path on Apple's IMG has changed from `lib` to `redist/lib`.
