@@ -25,8 +25,8 @@ This contains a Readme that outlines the process, but here we will customize it,
 
 **Note:** See `Update notes` below, if you did already install an older version!
 
-- The minimum macOS version is macOS Sonoma 14.0
-- This guide only applies to Apple Silicon Macs are supported. No Intel support
+- The minimum macOS version is macOS Sonoma 14.0, Xcode 15 (or Command Line Tools), Game Porting Toolkit v1.0
+- This guide only applies to Apple Silicon Macs are supported. No Intel support.
 - Open a terminal (or iTerm2)
 - Make sure that rosetta is installed by entering:
 
@@ -34,7 +34,7 @@ This contains a Readme that outlines the process, but here we will customize it,
 softwareupdate --install-rosetta
 ```
 
-Now your mac is able to execute x86_64 code. This is the basis for all the following installation.
+Now your Mac is able to execute x86_64 code. This is the basis for all the following installation.
 
 - Now switch to a x86 shell by entering:
 
@@ -54,7 +54,9 @@ This will install the Intel x86 version of homebrew to `/usr/local`. If you alre
 for Apple Silicon, then this version resides in `/opt/homebrew`. This guide will assume that the Apple Silicon
 homebrew is your important version, and will remain the default.
 
-Do not follow the recommendation at the end of the homebrew install script to put `shellenv` into `.zprofile`.
+Do **not** follow the recommendation at the end of the homebrew install script to put `shellenv` into `.zprofile`. (That 
+would put the x86 Version of Homebrew into your paths, conflicting with an Apple Silicon version of homebrew. No paths or
+environment modifications are needed in order to proceed!)
 
 In order not to mess up the two homebrew versions, we create an alias for the Intel homebrew:
 
