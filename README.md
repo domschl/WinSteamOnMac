@@ -116,7 +116,7 @@ If steam doesn't start after an update:
 ##### Last resort on failed updates
 
 - try to re-install steam: `WINEPREFIX=/Users/your-user-name/Win10 /usr/local/opt/game-porting-toolkit/bin/wine64 SteamSetup.exe` (replace `your-user-name`), or:
-- completely remove your homebrew x86 installation at `/usr/local/` and start over.
+- completely remove your homebrew x86 installation at `/usr/local/` and start over. (See below 'Uninstallation Notes' for proper removal.)
 
 #### Problems after Steam Client self-update
 
@@ -208,15 +208,20 @@ Again, make sure to replace `your-user-name` with the correct value!
 
 Add an icon to the shortcut, and you are ready to go. The shortcut can be put into the doc, and now you simply can directly start Steam for Windows!
 
+### Troubleshooting
+
+- See the `Readme.rtf`, section 'Troubleshooting' in Apple's `game-porting-toolkit` for advice on problems with specific games.
+- In case you got stuck somewhere during install, follow the 'Uninstallation notes' below before retrying a new installation.
+
 ### Uninstallation notes
 
 - Uninstall the Intel version of homebrew, following [this link to the uninstall-script](https://docs.brew.sh/FAQ#how-do-i-uninstall-homebrew)
 - Simply remove the directory tree that holds your wine-prefix: remove `/Users/<your-user-name>/Win10`.
-- Note: If you want to reinstall, make sure to reboot once to remove any remaining steam or setup processes
+- Note: If you want to reinstall, make sure to _reboot once_ to remove any remaining steam or setup processes from memory.
 
 ### History
 
-- 2023-10-06: Small fixes for release version of `game-porting-toolkit` 1.0
+- 2023-10-06: Small fixes for release version of `game-porting-toolkit` 1.0, Uninstallation and troubleshooting notes.
 - 2023-09-26: macOS Sonoma 14.0 Release tested ok. No changes.
 - 2023-09-24: Retest with Sonoma RC, `game-porting-toolkit` Beta 4 (Note: library path on Apple's IMG has changed from `lib` to `redist/lib`.
 - 2023-08-14: Updates for `game-porting-tookit` Beta 3 alias 1.0.3 and Sonoma Beta 5. (No significant changes to the update procedure).
