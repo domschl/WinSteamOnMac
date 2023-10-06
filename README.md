@@ -208,7 +208,7 @@ Login, and start installing your favorite Windows games...
 
 ### Quality of life enhancement.
 
-We can use Apple's shortcuts app to automate the process of launching Wine & Steam Windows. Start the shortcuts app, create a new shortcut and add the action 'Run Shell Script'.
+We can use Apple's 'Shortcuts' app to automate the process of launching Wine & Steam Windows. Start the Shortcuts app, create a new shortcut and add the action 'Run Shell Script'.
 
 ![](Resources/shortcuts.png)
 
