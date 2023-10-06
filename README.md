@@ -15,7 +15,7 @@ This guide is only tested for Apple Silicon machines.
 ## Preparations:
 
 - Go to [Apple Games](https://developer.apple.com/games/) in order to download the [game porting toolkit](https://developer.apple.com/download/all/?q=game%20porting%20toolkit)
-- [XCode >=15.0.0](https://developer.apple.com/download/all/?q=xcode) is required to be able to install `game-porting-toolkit`
+- Command Line Tools for Xcode 15, or Xcode 15 itself is required to be able to install `game-porting-toolkit`
 
 This contains a Readme that outlines the process, but here we will customize it, in order to run Steam.
 
@@ -71,17 +71,21 @@ brew86 tap apple/apple http://github.com/apple/homebrew-apple
 brew86 -v install apple/apple/game-porting-toolkit
 ```
 
-> **Note:** This starts a rather lengthy install- and compilation process that takes a long time!
+> **Note:** This starts a rather lengthy install- and compilation process that takes a long time! The compilation process (which can take an hour or more depending on your machine) finished with:
 
-In order to continue the initial installation, skip down to **Continue with initial installation**
+```
+==> game-porting-toolkit
+Please follow the instructions in the Game Porting Toolkit README to complete installation.
+```
+
+Instead, in order to continue the initial installation, skip down to **Continue with initial installation**
 
 ### Update notes
 
-> **Note:** This section is only for updates later, once the complete installation was finished. For initial installation, continue with **Continue installation**.
+> **Note:** This section is only for updates to a new version, once the complete installation was finished successfully before.
+> For initial installation, continue with **Continue with initial installation**.
 
-> **Note:** Update doesn't seem to be a straight foreward process. You might need to completely start over, if things go wrong. 
-
-- Make sure to use both the latest beta of macOS Sonoma and the latest `game-porting-toolkit` togehter.
+- Make sure to use both the latest release of macOS Sonoma, the latest latest release of `game-porting-toolkit`, and updated versions of Command Line Tools for Xcode (or full Xcode itself) together.
 
 If you want to update your x86 homebrew at a later point:
 
@@ -135,9 +139,11 @@ Note: we use the alias `brew86` we defined above.
 
 <img src="https://github.com/domschl/WinSteamOnMac/blob/main/Resources/winecfg.png" width="30%" align="right">
 
-This should start the `winecfg` program, a small setup for our `wine` environment. Select `Windows 10`, and `Apply`, 
+This should start the `winecfg` program, a small setup for our `wine` environment. 
 
-- Now open the Game Porting Toolkit which you downloaded above.
+- In WineCfg, select `Windows 10`, and `Apply`, 
+
+- Now open the Game Porting Toolkit which you downloaded above in Finder to verify it's mounted.
 
 <img src="https://github.com/domschl/WinSteamOnMac/blob/main/Resources/gameporting.png" width="60%">
 
@@ -153,7 +159,7 @@ Make sure you see the files of the toolkit and then:
 ditto /Volumes/Game\ Porting\ Toolkit-1.0/redist/lib/ `brew86 --prefix game-porting-toolkit`/lib/
 ```
 
-This copies the required apple libraries into your `wine` installation. Note that since beta-4, the libs on the image from Apple are in `redist/lib` (older versions: `lib`)
+This (silently) copies the required apple libraries into your `wine` installation. Note that since beta-4, the libs on the image from Apple are in `redist/lib` (older Beta versions: `lib`)
 
 Now copy the Windows setup of steam (we assume you downloaded into the default ~/Downloads` folder) into your new Windows drive:
 
@@ -183,7 +189,7 @@ Make sure to replace `your-user-name` above with the output of the `pwd` command
 
 This should now start the Steam setup process. Be patient.
 
-For me, it stayed with a black windows with no content for quite some time. After waiting patiently, I aborted the setup (be sure not to abort too early!), and started Steam directly:
+If you get a failure box with "restart Steam?", try that, and on continued failure exit, and after killing any remaining `wine64-preloader` instances using 'Activity Monitor' , started Steam directly:
 
 ```bash
 MTL_HUD_ENABLED=0 WINEESYNC=1 WINEPREFIX=/Users/your-user-name/Win10 /usr/local/opt/game-porting-toolkit/bin/wine64 Program\ Files\ \(x86\)/Steam/Steam.exe
