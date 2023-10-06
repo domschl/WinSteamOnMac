@@ -10,7 +10,7 @@ This guide is only tested for Apple Silicon machines.
 
 ## Latest tested versions
 
-- 2023-09-24: the combination of macOS Sonoma 14.0 and apple `game-porting-toolkit` 1.0.4 alias 1.0 Beta 4.
+- 2023-10-06: the combination of macOS Sonoma 14.0 and apple `game-porting-toolkit` 1.0
 
 ## Preparations:
 
@@ -25,9 +25,8 @@ This contains a Readme that outlines the process, but here we will customize it,
 
 **Note:** See `Update notes` below, if you did already install an older version!
 
-- You **must** run Release version of macOS Sonoma!
-- As of version `1.0.4` of the `game-porting-toolkit`, only Apple Silicon Macs are supported. No Intel support.
-- `game-porting-toolkit` versioning schemes used by Apple are inconsistent and have changed over time: there are `1.0.x` versions and `Beta x` versions. At the time of this update, it seems `x=4` for both schemes. Simply choose the latest by date and by hightest version number.
+- The minimum macOS version is macOS Sonoma 14.0
+- This guide only applies to Apple Silicon Macs are supported. No Intel support
 - Open a terminal (or iTerm2)
 - Make sure that rosetta is installed by entering:
 
@@ -54,6 +53,8 @@ Now, from a terminal that uses `x86_64` arch, install homebrew for x86:
 This will install the Intel x86 version of homebrew to `/usr/local`. If you already installed homebrew
 for Apple Silicon, then this version resides in `/opt/homebrew`. This guide will assume that the Apple Silicon
 homebrew is your important version, and will remain the default.
+
+Do not follow the recommendation at the end of the homebrew install script to put `shellenv` into `.zprofile`.
 
 In order not to mess up the two homebrew versions, we create an alias for the Intel homebrew:
 
@@ -208,6 +209,7 @@ Add an icon to the shortcut, and you are ready to go. The shortcut can be put in
 
 ### History
 
+- 2023-10-06: Small fixes for release version of `game-porting-toolkit` 1.0
 - 2023-09-26: macOS Sonoma 14.0 Release tested ok. No changes.
 - 2023-09-24: Retest with Sonoma RC, `game-porting-toolkit` Beta 4 (Note: library path on Apple's IMG has changed from `lib` to `redist/lib`.
 - 2023-08-14: Updates for `game-porting-tookit` Beta 3 alias 1.0.3 and Sonoma Beta 5. (No significant changes to the update procedure).
