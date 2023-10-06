@@ -71,9 +71,10 @@ brew86 tap apple/apple http://github.com/apple/homebrew-apple
 brew86 -v install apple/apple/game-porting-toolkit
 ```
 
+> **Note:** This starts a rather lengthy install- and compilation process that takes a long time!
+
 Now create a directory that will contain all the Windows stuff, Steam and any games you download. Here we'll use `~/Win10`,
 which is our `wine` prefix (Apple uses the example of `my-game-prefix`, we'll go with `Win10`):
-
 
 ### Update notes
 
@@ -206,6 +207,12 @@ MTL_HUD_ENABLED=0 WINEESYNC=1 WINEPREFIX=/Users/your-user-name/Win10 /usr/local/
 Again, make sure to replace `your-user-name` with the correct value!
 
 Add an icon to the shortcut, and you are ready to go. The shortcut can be put into the doc, and now you simply can directly start Steam for Windows!
+
+### Uninstallation notes
+
+- Uninstall the Intel version of homebrew, following [this link to the uninstall-script](https://docs.brew.sh/FAQ#how-do-i-uninstall-homebrew)
+- Simply remove the directory tree that holds your wine-prefix: remove `/Users/<your-user-name>/Win10`.
+- Note: If you want to reinstall, make sure to reboot once to remove any remaining steam or setup processes
 
 ### History
 
