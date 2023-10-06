@@ -73,14 +73,13 @@ brew86 -v install apple/apple/game-porting-toolkit
 
 > **Note:** This starts a rather lengthy install- and compilation process that takes a long time!
 
-Now create a directory that will contain all the Windows stuff, Steam and any games you download. Here we'll use `~/Win10`,
-which is our `wine` prefix (Apple uses the example of `my-game-prefix`, we'll go with `Win10`):
+In order to continue the initial installation, skip down to **Continue with initial installation**
 
 ### Update notes
 
-**Note:** This section is only for updates later, once the complete installation was finished. For initial installation, continue with **Continue installation**.
+> **Note:** This section is only for updates later, once the complete installation was finished. For initial installation, continue with **Continue installation**.
 
-**Note:** Update doesn't seem to be a straight foreward process. You might need to completely start over, if things go wrong. 
+> **Note:** Update doesn't seem to be a straight foreward process. You might need to completely start over, if things go wrong. 
 
 - Make sure to use both the latest beta of macOS Sonoma and the latest `game-porting-toolkit` togehter.
 
@@ -102,7 +101,7 @@ Then you will need to download the latest [game-porting-toolkit](https://develop
 ditto /Volumes/Game\ Porting\ Toolkit-1.0/redist/lib/ `brew86 --prefix game-porting-toolkit`/lib/
 ```
 
-**Note:** The layout of the game porting toolkit changed between beta 3 and beta 4, since beta 4 the libraries are now in `redist/lib` (beta3 and earlier: just `lib`.
+> **Note:** The layout of the game porting toolkit changed between beta 3 and beta 4, since beta 4 the libraries are now in `redist/lib` (beta3 and earlier: just `lib`.
 
 That's all that's needed for an update. Below information applies only to the initial installation.
 
@@ -122,7 +121,10 @@ If steam doesn't start after an update:
 
 - Self-update of steam client gets stuck. Wait for things to 'settle', then restart your computer to eliminate old rogue processes. It might be necessary to manually kill `wine64-preloader` instances before a restart is possible. After restart, the Steam Client update should work fine.
 
-### Continue installation
+### Continue with initial installation
+
+Now create a directory that will contain all the Windows stuff, Steam and any games you download. Here we'll use `~/Win10`,
+which is our `wine` prefix (Apple uses the example of `my-game-prefix`, we'll go with `Win10`):
 
 ```bash
 mkdir ~/Win10
