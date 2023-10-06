@@ -10,7 +10,7 @@ This guide is only tested for Apple Silicon machines.
 
 ## Latest tested versions
 
-- 2023-10-06: the combination of macOS Sonoma 14.0 and apple `game-porting-toolkit` 1.0
+- 2023-10-06: the combination of macOS Sonoma 14.0 (release version) and apple `game-porting-toolkit` 1.0 (release of 2023-10-05), Xcode 15.0.
 
 ## Preparations:
 
