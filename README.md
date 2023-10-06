@@ -223,7 +223,8 @@ Again, make sure to replace `your-user-name` with the correct value!
 
 > **Note:** 'Shortcut' might ask you for confirmation, if you want to run scripts, and you need to enable that via the settings-link provided.
 
-Add an icon to the shortcut, and you are ready to go. The shortcut can be put into the doc, and now you simply can directly start Steam for Windows!
+Add an icon to the shortcut, and you are ready to go. The shortcut can be put into the dock, and now you simply can directly start Steam for Windows! 
+(Right-click the shortcut script in the 'Shortcuts' app and select 'Add to dock' to create shortcut for your shortcut in the Shortcuts app...)
 
 ### Troubleshooting
 
