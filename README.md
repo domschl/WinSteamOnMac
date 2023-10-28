@@ -51,10 +51,11 @@ Now, from a terminal that uses `x86_64` arch, install homebrew for x86:
 ```
 
 This will install the Intel x86 version of homebrew to `/usr/local`. If you already installed homebrew
-for Apple Silicon, then this version resides in `/opt/homebrew`. This guide will assume that the Apple Silicon
-homebrew is your important version, and will remain the default.
+for Apple Silicon, then that version resides in `/opt/homebrew` and won't be touched. This guide will assume that the Apple Silicon
+homebrew is your important version, and will remain the default when working with terminal or using `brew`. If you do not have
+an Apple Silicon version of homebrew installed, don't worry, nothing we do here requires that or modifies any of it.
 
-Do **not** follow the recommendation at the end of the homebrew install script to put `shellenv` into `.zprofile`. (That 
+Do **not** follow the recommendation at the end of the x86-homebrew install script to put `shellenv` into `.zprofile`. (That 
 would put the x86 Version of Homebrew into your paths, conflicting with an Apple Silicon version of homebrew. No paths or
 environment modifications are needed in order to proceed!)
 
