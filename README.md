@@ -26,7 +26,7 @@ This contains a Readme that outlines the process, but here we will customize it,
 **Note:** See `Update notes` below, if you did already install an older version!
 
 - The minimum macOS version is macOS Sonoma 14.0, Xcode 15 (or Command Line Tools), Game Porting Toolkit v1.0
-- This guide only applies to Apple Silicon Macs are supported. No Intel support.
+- This guide only applies to Apple Silicon Macs. No Intel support.
 - Open a terminal (or iTerm2)
 - Make sure that rosetta is installed by entering:
 
