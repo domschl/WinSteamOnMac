@@ -164,7 +164,7 @@ ditto /Volumes/Game\ Porting\ Toolkit-1.0/redist/lib/ `brew86 --prefix game-port
 
 This (silently) copies the required apple libraries into your `wine` installation. Note that since beta-4, the libs on the image from Apple are in `redist/lib` (older Beta versions: `lib`)
 
-Now copy the Windows setup of steam (we assume you downloaded into the default ~/Downloads` folder) into your new Windows drive:
+Now copy the Windows setup of steam (we assume you downloaded into the default `~/Downloads` folder) into your new Windows drive:
 
 ```bash
 cp ~/Downloads/SteamSetup.exe ~/Win10/drive_c
