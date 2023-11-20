@@ -121,7 +121,7 @@ If steam doesn't start after an update:
 
 ##### Last resort on failed updates
 
-- try to re-install steam: `WINEPREFIX=/Users/your-user-name/Win10 /usr/local/opt/game-porting-toolkit/bin/wine64 SteamSetup.exe` (replace `your-user-name`), or:
+- try to re-install steam: `WINEPREFIX=/Users/$(whoami)/Win10 /usr/local/opt/game-porting-toolkit/bin/wine64 SteamSetup.exe`, or:
 - completely remove your homebrew x86 installation at `/usr/local/` and start over. (See below 'Uninstallation Notes' for proper removal.)
 
 #### Problems after Steam Client self-update
@@ -177,7 +177,7 @@ cd ~/Win10
 pwd
 ```
 
-It should say something like `/Users/you-user-name/Win10`. This is your `wine`-prefix, which you need to use below (instead of `your-user-name` placeholder).
+It should say something like `/Users/$(whoami)/Win10`. This is your `wine`-prefix, which you need to use below.
 
 Apple provides a few scripts to start games, which we will not use: `gameportingtoolkit`, `gameportingtoolkit-no-esync`, and `gameportingtoolkit-no-hud`. Open those script with your favorite editor to learn how to configure `wine`. The `Readme.rtf` or the Game Porting Toolkit explains the differences.
 
@@ -185,10 +185,8 @@ We use what we learned from inspecting the scripts and directly start the Steam 
 
 ```bash
 cd ~/Win10/drive_c
-MTL_HUD_ENABLED=0 WINEESYNC=1 WINEPREFIX=/Users/your-user-name/Win10 /usr/local/opt/game-porting-toolkit/bin/wine64 SteamSetup.exe
+MTL_HUD_ENABLED=0 WINEESYNC=1 WINEPREFIX=/Users/$(whoami)/Win10 /usr/local/opt/game-porting-toolkit/bin/wine64 SteamSetup.exe
 ```
-
-Make sure to replace `your-user-name` above with the output of the `pwd` command.
 
 This should now start the Steam setup process. Be patient.
 
@@ -198,10 +196,8 @@ This should now start the Steam setup process. Be patient.
 
 ```bash
 cd ~/Win10/drive_c
-MTL_HUD_ENABLED=0 WINEESYNC=1 WINEPREFIX=/Users/your-user-name/Win10 /usr/local/opt/game-porting-toolkit/bin/wine64 Program\ Files\ \(x86\)/Steam/Steam.exe
+MTL_HUD_ENABLED=0 WINEESYNC=1 WINEPREFIX=/Users/$(whoami)/Win10 /usr/local/opt/game-porting-toolkit/bin/wine64 Program\ Files\ \(x86\)/Steam/Steam.exe
 ```
-
-(replace `your-user-name`!)
 
 This took some time, but then the Steam logon appears! Horray!
 
@@ -217,10 +213,8 @@ The script text is:
 
 ```bash
 cd ~/Win10/drive_c
-MTL_HUD_ENABLED=0 WINEESYNC=1 WINEPREFIX=/Users/your-user-name/Win10 /usr/local/opt/game-porting-toolkit/bin/wine64 Program\ Files\ \(x86\)/Steam/Steam.exe
+MTL_HUD_ENABLED=0 WINEESYNC=1 WINEPREFIX=/Users/$(whoami)/Win10 /usr/local/opt/game-porting-toolkit/bin/wine64 Program\ Files\ \(x86\)/Steam/Steam.exe
 ```
-
-Again, make sure to replace `your-user-name` with the correct value!
 
 > **Note:** 'Shortcut' might ask you for confirmation, if you want to run scripts, and you need to enable that via the settings-link provided.
 
