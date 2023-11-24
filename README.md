@@ -90,7 +90,7 @@ Instead, in order to continue the initial installation, skip down to **Continue 
 
 - Make sure to use both the latest release of macOS Sonoma, the latest latest release of `game-porting-toolkit`, and updated versions of Command Line Tools for Xcode (or full Xcode itself) together.
 
-If you want to update your x86 homebrew at a later point:
+If you want to update your x86 homebrew at a later point, start an x86 shell in Terminal with:
 
 ```bash
 arch -x86_64 zsh
