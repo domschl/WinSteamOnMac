@@ -239,7 +239,7 @@ Add an icon to the shortcut, and you are ready to go. The shortcut can be put in
 
 ### History
 
-- 2023-11-24: Apple Game Porting Toolkit 1.1 changes
+- 2023-11-24: Apple Game Porting Toolkit 1.1 changes. Addressed suggestions by @mobigroup and @cdtj concerning username placeholders.
 - 2023-10-06: New installations with Xcode 15, Sonoma 14.0 release and `game-porting-toolkit` 1.0 retested, ok.
 - 2023-10-06: Small fixes for release version of `game-porting-toolkit` 1.0, Uninstallation and troubleshooting notes.
 - 2023-09-26: macOS Sonoma 14.0 Release tested ok. No changes.
