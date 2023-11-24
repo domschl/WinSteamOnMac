@@ -94,6 +94,11 @@ If you want to update your x86 homebrew at a later point:
 
 ```bash
 arch -x86_64 zsh
+```
+
+then in the x86 shell:
+
+```bash
 alias brew86=/usr/local/bin/brew
 brew86 update
 brew86 upgrade
@@ -105,7 +110,7 @@ Remember, the build process will take about 30min even on a very fast machine!
 Then you will need to download the latest [game-porting-toolkit](https://developer.apple.com/download/all/?q=game%20porting%20toolkit) from apple to update the libraries in your wine prefix. Open the download and:
 
 ```bash
-ditto /Volumes/Game\ Porting\ Toolkit-1.0/redist/lib/ `brew86 --prefix game-porting-toolkit`/lib/
+ditto /Volumes/Game\ Porting\ Toolkit-1.1/redist/lib/ `brew86 --prefix game-porting-toolkit`/lib/
 ```
 
 > **Note:** The layout of the game porting toolkit changed between beta 3 and beta 4, since beta 4 the libraries are now in `redist/lib` (beta3 and earlier: just `lib`.
@@ -153,13 +158,13 @@ This should start the `winecfg` program, a small setup for our `wine` environmen
 From your Terminal, it should be available at:
 
 ```bash
-ls /Volumes/Game\ Porting\ Toolkit-1.0/
+ls /Volumes/Game\ Porting\ Toolkit-1.1/
 ```
 
 Make sure you see the files of the toolkit and then:
 
 ```bash
-ditto /Volumes/Game\ Porting\ Toolkit-1.0/redist/lib/ `brew86 --prefix game-porting-toolkit`/lib/
+ditto /Volumes/Game\ Porting\ Toolkit-1.1/redist/lib/ `brew86 --prefix game-porting-toolkit`/lib/
 ```
 
 This (silently) copies the required apple libraries into your `wine` installation. Note that since beta-4, the libs on the image from Apple are in `redist/lib` (older Beta versions: `lib`)
@@ -240,6 +245,7 @@ Add an icon to the shortcut, and you are ready to go. The shortcut can be put in
 
 ### History
 
+- 2023-11-24: Apple Game Porting Toolkit 1.1 changes
 - 2023-10-06: New installations with Xcode 15, Sonoma 14.0 release and `game-porting-toolkit` 1.0 retested, ok.
 - 2023-10-06: Small fixes for release version of `game-porting-toolkit` 1.0, Uninstallation and troubleshooting notes.
 - 2023-09-26: macOS Sonoma 14.0 Release tested ok. No changes.
