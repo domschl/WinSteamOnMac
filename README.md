@@ -10,7 +10,7 @@ This guide is only tested for Apple Silicon machines.
 
 ## Latest tested versions
 
-- 2023-10-06: the combination of macOS Sonoma 14.0 (release version) and apple `game-porting-toolkit` 1.1 (release of 2023-11-15), Xcode 15.
+- 2023-10-06: the combination of macOS Sonoma 14 and Apple `game-porting-toolkit` 1.1 (release of 2023-11-15), Xcode 15.
 
 ## Preparations:
 
@@ -25,7 +25,7 @@ This contains a Readme that outlines the process, but here we will customize it,
 
 **Note:** See `Update notes` below, if you did already install an older version!
 
-- The minimum macOS version is macOS Sonoma 14.0, Xcode 15 (or Command Line Tools), Game Porting Toolkit v1.0
+- The minimum macOS version is macOS Sonoma 14.1, Xcode 15 (or Command Line Tools), Game Porting Toolkit v1.1
 - This guide only applies to Apple Silicon Macs. No Intel support.
 - Open a terminal (or iTerm2)
 - Make sure that rosetta is installed by entering:
@@ -117,6 +117,8 @@ ditto /Volumes/Game\ Porting\ Toolkit-1.1/redist/lib/ `brew86 --prefix game-port
 
 That's all that's needed for an update. Below information applies only to the initial installation.
 
+When starting the Steam client after an update, remember that the initial first start might take several minutes (**patience!**), and is not always successful without 'retry': see below for common issues.
+
 #### Update trouble
 
 If steam doesn't start after an update:
@@ -204,7 +206,7 @@ cd ~/Win10/drive_c
 MTL_HUD_ENABLED=0 WINEESYNC=1 WINEPREFIX=~/Win10 /usr/local/opt/game-porting-toolkit/bin/wine64 Program\ Files\ \(x86\)/Steam/Steam.exe
 ```
 
-This took some time, but then the Steam logon appears! Horray!
+This took some time (**patience!**), but then the Steam logon appears! Horray!
 
 Login, and start installing your favorite Windows games...
 
