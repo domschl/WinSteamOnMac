@@ -113,7 +113,7 @@ Then you will need to download the latest [game-porting-toolkit](https://develop
 ditto /Volumes/Game\ Porting\ Toolkit-1.1/redist/lib/ `brew86 --prefix game-porting-toolkit`/lib/
 ```
 
-> **Note:** The layout of the game porting toolkit changed between beta 3 and beta 4, since beta 4 the libraries are now in `redist/lib` (beta3 and earlier: just `lib`.
+> **Note:** The layout of the game porting toolkit changed between beta 3 and beta 4, since beta 4 the libraries are now in `redist/lib` (beta3 and earlier: just `lib`). Also adapt the version of the Toolkit, if necessary.
 
 That's all that's needed for an update. Below information applies only to the initial installation.
 
@@ -126,7 +126,7 @@ If steam doesn't start after an update:
 
 ##### Last resort on failed updates
 
-- try to re-install steam: `WINEPREFIX=/Users/your-user-name/Win10 /usr/local/opt/game-porting-toolkit/bin/wine64 SteamSetup.exe` (replace `your-user-name`), or:
+- try to re-install steam: `WINEPREFIX=~/Win10 /usr/local/opt/game-porting-toolkit/bin/wine64 SteamSetup.exe`, or:
 - completely remove your homebrew x86 installation at `/usr/local/` and start over. (See below 'Uninstallation Notes' for proper removal.)
 
 #### Problems after Steam Client self-update
@@ -182,7 +182,7 @@ cd ~/Win10
 pwd
 ```
 
-It should say something like `/Users/you-user-name/Win10`. This is your `wine`-prefix, which you need to use below (instead of `your-user-name` placeholder).
+It should say something like `/Users/you-user-name/Win10`. This is your `wine`-prefix, which you need to use below.
 
 Apple provides a few scripts to start games, which we will not use: `gameportingtoolkit`, `gameportingtoolkit-no-esync`, and `gameportingtoolkit-no-hud`. Open those script with your favorite editor to learn how to configure `wine`. The `Readme.rtf` or the Game Porting Toolkit explains the differences.
 
@@ -190,10 +190,8 @@ We use what we learned from inspecting the scripts and directly start the Steam 
 
 ```bash
 cd ~/Win10/drive_c
-MTL_HUD_ENABLED=0 WINEESYNC=1 WINEPREFIX=/Users/your-user-name/Win10 /usr/local/opt/game-porting-toolkit/bin/wine64 SteamSetup.exe
+MTL_HUD_ENABLED=0 WINEESYNC=1 WINEPREFIX=~/Win10 /usr/local/opt/game-porting-toolkit/bin/wine64 SteamSetup.exe
 ```
-
-Make sure to replace `your-user-name` above with the output of the `pwd` command.
 
 This should now start the Steam setup process. Be patient.
 
@@ -203,10 +201,8 @@ This should now start the Steam setup process. Be patient.
 
 ```bash
 cd ~/Win10/drive_c
-MTL_HUD_ENABLED=0 WINEESYNC=1 WINEPREFIX=/Users/your-user-name/Win10 /usr/local/opt/game-porting-toolkit/bin/wine64 Program\ Files\ \(x86\)/Steam/Steam.exe
+MTL_HUD_ENABLED=0 WINEESYNC=1 WINEPREFIX=~/Win10 /usr/local/opt/game-porting-toolkit/bin/wine64 Program\ Files\ \(x86\)/Steam/Steam.exe
 ```
-
-(replace `your-user-name`!)
 
 This took some time, but then the Steam logon appears! Horray!
 
@@ -222,10 +218,8 @@ The script text is:
 
 ```bash
 cd ~/Win10/drive_c
-MTL_HUD_ENABLED=0 WINEESYNC=1 WINEPREFIX=/Users/your-user-name/Win10 /usr/local/opt/game-porting-toolkit/bin/wine64 Program\ Files\ \(x86\)/Steam/Steam.exe
+MTL_HUD_ENABLED=0 WINEESYNC=1 WINEPREFIX=~/Win10 /usr/local/opt/game-porting-toolkit/bin/wine64 Program\ Files\ \(x86\)/Steam/Steam.exe
 ```
-
-Again, make sure to replace `your-user-name` with the correct value!
 
 > **Note:** 'Shortcut' might ask you for confirmation, if you want to run scripts, and you need to enable that via the settings-link provided.
 
@@ -240,7 +234,7 @@ Add an icon to the shortcut, and you are ready to go. The shortcut can be put in
 ### Uninstallation notes
 
 - Uninstall the Intel version of homebrew, following [this link to the uninstall-script](https://docs.brew.sh/FAQ#how-do-i-uninstall-homebrew). Execute this script from a X86-64 Shell created with `arch -x86_64 zsh`.
-- Simply remove the directory tree that holds your wine-prefix: remove `/Users/<your-user-name>/Win10`.
+- Simply remove the directory tree that holds your wine-prefix: remove `~/Win10`.
 - Note: If you want to reinstall, make sure to _reboot once_ to remove any remaining steam or setup processes from memory.
 
 ### History
