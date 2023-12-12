@@ -10,12 +10,12 @@ This guide is only tested for Apple Silicon machines.
 
 ## Latest tested versions
 
-- 2023-10-06: the combination of macOS Sonoma 14 and Apple `game-porting-toolkit` 1.1 (release of 2023-11-15), Xcode 15.
+- 2023-10-06: the combination of macOS Sonoma 14 and Apple `Game Porting Toolkit` 1.1 (release of 2023-11-15), Xcode 15.
 
 ## Preparations:
 
 - Go to [Apple Games](https://developer.apple.com/games/) in order to download the [Game Porting Toolkit](https://developer.apple.com/download/all/?q=game%20porting%20toolkit)
-- Command Line Tools for Xcode 15, or Xcode 15 itself is required to be able to install `game-porting-toolkit`
+- Command Line Tools for Xcode 15, or Xcode 15 itself is required to be able to install `Game Porting Toolkit`
 
 This contains a Readme that outlines the process, but here we will customize it, in order to run Steam.
 
@@ -107,7 +107,7 @@ brew86 upgrade
 This will update your x86 homebrew environment and automatically build the latest `game-porting-toolkit`.
 Remember, the build process will take about 30min even on a very fast machine!
 
-Then you will need to download the latest [game-porting-toolkit](https://developer.apple.com/download/all/?q=game%20porting%20toolkit) from apple to update the libraries in your wine prefix. Open the download and:
+Then you will need to download the latest [Game Porting Toolkit](https://developer.apple.com/download/all/?q=game%20porting%20toolkit) from apple to update the libraries in your wine prefix. Open the download and:
 
 ```bash
 ditto /Volumes/Game\ Porting\ Toolkit-1.1/redist/lib/ `brew86 --prefix game-porting-toolkit`/lib/
