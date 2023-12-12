@@ -14,7 +14,7 @@ This guide is only tested for Apple Silicon machines.
 
 ## Preparations:
 
-- Go to [Apple Games](https://developer.apple.com/games/) in order to download the [game porting toolkit](https://developer.apple.com/download/all/?q=game%20porting%20toolkit)
+- Go to [Apple Games](https://developer.apple.com/games/) in order to download the [Game Porting Toolkit](https://developer.apple.com/download/all/?q=game%20porting%20toolkit)
 - Command Line Tools for Xcode 15, or Xcode 15 itself is required to be able to install `game-porting-toolkit`
 
 This contains a Readme that outlines the process, but here we will customize it, in order to run Steam.
