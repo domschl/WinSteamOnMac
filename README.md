@@ -8,9 +8,12 @@ We will make sure that our existing environment (and the Apple silicon version o
 
 This guide is only tested for Apple Silicon machines.
 
+Note: This guide uses terminal and command line to install the Apple's `game-porting-toolkit` 'the hard way'. If you just want to game, it might
+be easier to use a GUI wrapper for the toolkit like [Whisky](https://github.com/Whisky-App/Whisky)
+
 ## Latest tested versions
 
-- 2024-03-24: ![Note:](http://img.shields.io/badge/🛑-ERROR-red.svg?style=flat) Apple's `game-porting-toolkit`is currently broken. Currently, this guide __WILL FAIL TO INSTALL__. This page will be updated as soon as a solution is available. [Issue 4](https://github.com/domschl/WinSteamOnMac/issues/9) tracks the situation.
+- 2024-03-24: ![Note:](http://img.shields.io/badge/🛑-ERROR-red.svg?style=flat) Apple's `game-porting-toolkit`is currently broken. Currently, this guide __WILL FAIL TO INSTALL__. This page will be updated as soon as a solution is available. [Issue 4](https://github.com/domschl/WinSteamOnMac/issues/9) tracks the situation. The current workaround is to use the [Whisky GUI App](https://github.com/Whisky-App/Whisky) that comes with a frozen (and working) version of the toolkit.
 - 2024-03-08: the combination of macOS Sonoma 14.4 and Apple `Game Porting Toolkit` 1.1 (release of 2023-11-15), Xcode 15.
 
 ## Preparations:
