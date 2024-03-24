@@ -240,6 +240,11 @@ Add an icon to the shortcut, and you are ready to go. The shortcut can be put in
 - Simply remove the directory tree that holds your wine-prefix: remove `~/Win10`.
 - Note: If you want to reinstall, make sure to _reboot once_ to remove any remaining steam or setup processes from memory.
 
+### References
+
+- A 'batteries-included' GUI version to get the game-porting-toolkit running: [Whisky](https://github.com/Whisky-App/Whisky)
+- Good collection of information: [Apple Gaming Wiki](https://www.applegamingwiki.com/wiki/Game_Porting_Toolkit)
+
 ### History
 
 - 2024-03-24: Apple's `game_porting_toolkit` is broken, the project currently doesn't install until the build is fixed by Apple.
