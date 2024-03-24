@@ -10,6 +10,7 @@ This guide is only tested for Apple Silicon machines.
 
 ## Latest tested versions
 
+- 2024-03-24: ![Note:](http://img.shields.io/badge/🛑-ERROR-red.svg?style=flat) Apple's `game-porting-toolkit`is currently broken. Currently, this guide __WILL FAIL TO INSTALL__. This page will be updated as soon as a solution is available. [Issue 4](https://github.com/domschl/WinSteamOnMac/issues/9) tracks the situation.
 - 2024-03-08: the combination of macOS Sonoma 14.4 and Apple `Game Porting Toolkit` 1.1 (release of 2023-11-15), Xcode 15.
 
 ## Preparations:
@@ -241,6 +242,7 @@ Add an icon to the shortcut, and you are ready to go. The shortcut can be put in
 
 ### History
 
+- 2024-03-24: Apple's `game_porting_toolkit` is broken, the project currently doesn't install until the build is fixed by Apple.
 - 2024-03-08: macOS 14.4 testet ok.
 - 2023-11-24: Apple Game Porting Toolkit 1.1 changes. Addressed suggestions by @mobigroup and @cdtj concerning username placeholders.
 - 2023-10-06: New installations with Xcode 15, Sonoma 14.0 release and `game-porting-toolkit` 1.0 retested, ok.
