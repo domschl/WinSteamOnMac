@@ -8,18 +8,19 @@ We will make sure that our existing environment (and the Apple silicon version o
 
 This guide is only tested for Apple Silicon machines.
 
-Note: This guide uses terminal and command line to install the Apple's `game-porting-toolkit` 'the hard way'. If you just want to game, it might
-be easier to use a GUI wrapper for the toolkit like [Whisky](https://github.com/Whisky-App/Whisky)
-
 ## Latest tested versions
 
-- 2024-03-24: ![Note:](http://img.shields.io/badge/🛑-ERROR-red.svg?style=flat) Apple's `game-porting-toolkit`is currently broken. Currently, this guide __WILL FAIL TO INSTALL__. This page will be updated as soon as a solution is available. [Issue 4](https://github.com/domschl/WinSteamOnMac/issues/9) tracks the situation. The current workaround is to use the [Whisky GUI App](https://github.com/Whisky-App/Whisky) that comes with a frozen (and working) version of the toolkit.
+- 2024-03-24: ![Note:](http://img.shields.io/badge/⚠️-Warning-orange.svg?style=flat) Apple's `game-porting-toolkit` currently requires an older version of Apple's command line tool (version 15.1) in order to install successfully! Current Xcode 15.3 __will not work__!
 - 2024-03-08: the combination of macOS Sonoma 14.4 and Apple `Game Porting Toolkit` 1.1 (release of 2023-11-15), Xcode 15.
 
 ## Preparations:
 
 - Go to [Apple Games](https://developer.apple.com/games/) in order to download the [Game Porting Toolkit](https://developer.apple.com/download/all/?q=game%20porting%20toolkit)
-- Command Line Tools for Xcode 15, or Xcode 15 itself is required to be able to install `Game Porting Toolkit`
+- Command Line Tools for Xcode **15.1** are required to be able to install `Game Porting Toolkit`. **WARNING** Apple's `game-porting-toolkit` __fails to build with current Xcode or Command line tools 15.3, you must use the older version 15.1__ to be able to build the toolkit successfully. You can decide to keep the recent Xcode, and install the older command line tools additionally and use `xcode-select -s` to switch between versions.
+
+Get the command line tools here [Command line tools 15.1](https://download.developer.apple.com/Developer_Tools/Command_Line_Tools_for_Xcode_15.1/Command_Line_Tools_for_Xcode_15.1.dmg)
+
+If you have Xcode concurrent to command line tools installed, you can use `xcode-select -p` to check which version is active. The correct output after installation of command line tools 15.1 should be: `/Library/Developer/CommandLineTools`. In case a path to Xcode is shown, you can can correct the path with `xcode-select -s /Library/Developer/CommandLineTools`.
 
 This contains a Readme that outlines the process, but here we will customize it, in order to run Steam.
 
@@ -29,7 +30,7 @@ This contains a Readme that outlines the process, but here we will customize it,
 
 **Note:** See `Update notes` below, if you did already install an older version!
 
-- The minimum macOS version is macOS Sonoma 14.1, Xcode 15 (or Command Line Tools), Game Porting Toolkit v1.1
+- The minimum macOS version is macOS Sonoma 14.1, Xcode 15.1 (or Command Line Tools 15.1, newer versions __not supported__), Game Porting Toolkit v1.1
 - This guide only applies to Apple Silicon Macs. No Intel support.
 - Open a terminal (or iTerm2)
 - Make sure that rosetta is installed by entering:
@@ -248,11 +249,12 @@ Add an icon to the shortcut, and you are ready to go. The shortcut can be put in
 
 ### References
 
-- A 'batteries-included' GUI version to get the game-porting-toolkit running: [Whisky](https://github.com/Whisky-App/Whisky)
 - Good collection of information: [Apple Gaming Wiki](https://www.applegamingwiki.com/wiki/Game_Porting_Toolkit)
+- A 'batteries-included' GUI version to get the game-porting-toolkit running: [Whisky](https://github.com/Whisky-App/Whisky)
 
 ### History
 
+- 2024-03-26: Apple's `game_porting_toolit` requires Command Line Tools version 15.1 to build successfully, newer versions are not (yet) supported.
 - 2024-03-24: Apple's `game_porting_toolkit` is broken, the project currently doesn't install until the build is fixed by Apple.
 - 2024-03-08: macOS 14.4 testet ok.
 - 2023-11-24: Apple Game Porting Toolkit 1.1 changes. Addressed suggestions by @mobigroup and @cdtj concerning username placeholders.
