@@ -104,6 +104,9 @@ then in the x86 shell:
 
 ```bash
 alias brew86=/usr/local/bin/brew
+```
+
+```bash
 brew86 update
 brew86 upgrade
 ```
