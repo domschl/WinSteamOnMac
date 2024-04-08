@@ -236,6 +236,11 @@ MTL_HUD_ENABLED=0 WINEESYNC=1 WINEPREFIX=~/Win10 /usr/local/opt/game-porting-too
 Add an icon to the shortcut, and you are ready to go. The shortcut can be put into the dock, and now you simply can directly start Steam for Windows! 
 (Right-click the shortcut script in the 'Shortcuts' app and select 'Add to dock' to create shortcut for your shortcut in the Shortcuts app...)
 
+### Closing Steam
+
+- Use Steamclient's GUI menu (Steam / Exit) or the menu bar icon (right-click, 'Exit Steam') to terminate steam. The GUI should display 'Shutting down Steam', indicating a proper termination of all Steam processes.
+- Just Ctrl-C-ing in the terminal (or other methods to 'suddenly' terminate Steam will cause crash-bug-workarounds to kick in, restarting Steam automatically again and again...
+
 ### Troubleshooting
 
 - See the `Readme.rtf`, section 'Troubleshooting' in Apple's `game-porting-toolkit` for advice on problems with specific games.
