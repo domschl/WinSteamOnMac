@@ -252,7 +252,7 @@ Add an icon to the shortcut, and you are ready to go. The shortcut can be put in
 
 ### Uninstallation notes
 
-- Uninstall the Intel version of homebrew, following [this link to the uninstall-script](https://docs.brew.sh/FAQ#how-do-i-uninstall-homebrew). Execute this script from a X86-64 Shell created with `arch -x86_64 zsh`.
+- Uninstall the Intel version of homebrew, enter a x86 shell with `arch -x86_64 zsh`, following [this link to the uninstall-script](https://docs.brew.sh/FAQ#how-do-i-uninstall-homebrew). There are different deinstall scripts listed. Use the last option that allows selecting the prefix `/usr/local` to make sure that you remove the correct Homebrew version. Execute this script from a X86-64 Shell created with `arch -x86_64 zsh`.
 - Simply remove the directory tree that holds your wine-prefix: remove `~/Win10`.
 - Note: If you want to reinstall, make sure to _reboot once_ to remove any remaining steam or setup processes from memory.
 
