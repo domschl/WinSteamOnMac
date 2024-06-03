@@ -10,6 +10,7 @@ This guide is only tested for Apple Silicon machines.
 
 ## Latest tested versions
 
+- 2024-06-03: ![Note:](http://img.shields.io/badge/🛑-Error-red.svg?style=flat) Unfortunately Apple's installation is currently broken. This guide doesn't work until the cause has been identified and fixed! See [Issue 9](https://github.com/domschl/WinSteamOnMac/issues/9) for details.
 - 2024-03-24: ![Note:](http://img.shields.io/badge/⚠️-Warning-orange.svg?style=flat) Apple's `game-porting-toolkit` currently requires an older version of Apple's command line tool (version 15.1) in order to install successfully! Current Xcode 15.3 __will not work__!
 - 2024-03-08: the combination of macOS Sonoma 14.4 and Apple `Game Porting Toolkit` 1.1 (release of 2023-11-15), Xcode 15.
 
