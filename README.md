@@ -18,7 +18,7 @@ This guide is only tested for Apple Silicon machines.
 ## Preparations:
 
 - Go to [Apple Games](https://developer.apple.com/games/) in order to download the [Game Porting Toolkit](https://developer.apple.com/download/all/?q=game%20porting%20toolkit)
-- Command Line Tools for Xcode **15.1** are required to be able to install `Game Porting Toolkit`. **WARNING** Apple's `game-porting-toolkit` __fails to build with current Xcode or Command line tools 15.3, you must use the older version 15.1__ to be able to build the toolkit successfully. You can decide to keep the recent Xcode, and install the older command line tools additionally and use `xcode-select -s` to switch between versions.
+- Command Line Tools for Xcode **15.1** are required to be able to install `Game Porting Toolkit`. **WARNING** Apple's `game-porting-toolkit` __fails to build with current Xcode or Command line tools newer than 15.1, you **must** use the older version 15.1__ to be able to build the toolkit successfully. You can decide to keep the recent Xcode, and install the older command line tools additionally and use `xcode-select -s` to switch between versions.
 
 > #### Get the correct command line tools
 >
