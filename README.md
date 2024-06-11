@@ -10,16 +10,16 @@ This guide is only tested for Apple Silicon machines.
 
 ## Latest tested versions
 
-- 2024-06-11: ![Note:](http://img.shields.io/badge/🛑-Error-red.svg?style=flat) New version 2.0 beta available, but compilation of the toolkit _still fails_, which is not exactly suprising, since the homebrew formula hasn't been updated, and still uses the broken 1.1 version. 
+- 2024-06-11: ![Note:](http://img.shields.io/badge/🛑-Error-red.svg?style=flat) New version 2.0 beta available, but compilation of the toolkit _still fails_, which is not exactly suprising, since the homebrew formula hasn't been updated, and still uses the broken 1.1 version. The current work-around is to install a pre-built version of the toolkit.
 - 2024-06-03: ![Note:](http://img.shields.io/badge/🛑-Error-red.svg?style=flat) Unfortunately Apple's installation is currently broken. This guide doesn't work until the cause has been identified and fixed! See [Issue 9](https://github.com/domschl/WinSteamOnMac/issues/9) for details.
 - 2024-03-24: ![Note:](http://img.shields.io/badge/⚠️-Warning-orange.svg?style=flat) Apple's `game-porting-toolkit` currently requires an older version of Apple's command line tool (version 15.1) in order to install successfully! Current Xcode 15.3 __will not work__!
 
 ## Preparations:
 
 - Go to [Apple Games](https://developer.apple.com/games/) in order to download the [Game Porting Toolkit](https://developer.apple.com/download/all/?q=game%20porting%20toolkit). There are two possible downloads: "Evaluation environment for Windows games 2.0 beta" and "Game porting toolkit 2.0 beta" which is larger and contains the 'Evaluation environment' too. We will need the "Evaluation environment for Windows games 2.0" only.
-- Command Line Tools for Xcode **15.1** are required to be able to install `Game Porting Toolkit`. **WARNING** Apple's `game-porting-toolkit` __fails to build with current Xcode or Command line tools newer than 15.1, you **must** use the older version 15.1__ to be able to build the toolkit successfully. You can decide to keep the recent Xcode, and install the older command line tools additionally and use `xcode-select -s` to switch between versions.
+- If you want to try to build the toolkit yourself (currently broken!): Command Line Tools for Xcode **15.1** are required to be able to install `Game Porting Toolkit`. **WARNING** Apple's `game-porting-toolkit` __fails to build with current Xcode or Command line tools newer than 15.1, you **must** use the older version 15.1__ to be able to build the toolkit successfully. You can decide to keep the recent Xcode, and install the older command line tools additionally and use `xcode-select -s` to switch between versions.
 
-> #### Get the correct command line tools
+> #### Get the correct command line tools (optional, only for self-builders)
 >
 > Get the command line tools here [Command line tools 15.1](https://download.developer.apple.com/Developer_Tools/Command_Line_Tools_for_Xcode_15.1/Command_Line_Tools_for_Xcode_15.1.dmg)
 >
@@ -81,6 +81,47 @@ alias brew86=/usr/local/bin/brew
 
 Note: if you are following Apple's readme, make sure to replace all instances of `brew` in Apple's doc with `brew86` from now on.
 
+## Build yourself or use pre-built toolkit
+
+### Pre-built toolkit
+
+Use Dean Greer's (GCenX) versions of the toolkit that have been prebuilt. This is the faster installation method (and currently the only non-broken one):
+
+```bash
+brew86 install --cask --no-quarantine gcenx/wine/game-porting-toolkit
+```
+
+This installs a graphical Application "Game Porting Toolkit" based on the old working binaries that opens a pre-configured terminal with all the tools. Go to applications and open "Game Porting Toolkit". In the terminal window that gets started by the application, enter:
+
+`wine winecfg`
+
+To verify everything is working. Close Winecfg and start with the update procedure to the latest drivers.
+
+Make sure that you have opened the "Evalutaion environment for Windows Games". You should see this at `/Volumes/Evaluation environment for Windows games 2.0`. Then start the update:
+
+```bash
+cd /Applications/Game\ Porting\ Toolkit.app/Contents/Resources/wine/lib/external
+mv D3DMetal.framework D3DMetal.framework-old; mv libd3dshared.dylib libd3dshared.dylib-old
+ditto /Volumes/Evaluation\ environment\ for\ Windows\ games\ 2.0/redist/lib/external/ .
+
+This is silent on success.
+
+Now you are ready to install Steam:
+
+```bash
+MTL_HUD_ENABLED=0 WINEESYNC=1 wine ~/Downloads/SteamSetup.exe
+```
+
+After some time, the Steam login appears!
+
+Steam has been installed into the wine prefix at `~/.wine` and you can start Steam again from the terminal that is been opened by the Application "Game Porting Toolkit" with:
+
+```bash
+MTL_HUD_ENABLED=0 WINEESYNC=1 wine ./
+
+-----------------------
+
+### Built yourself __(currently broken)__
 Now we install Apple's homebrew tap:
 
 ```bash
