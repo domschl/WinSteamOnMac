@@ -90,7 +90,7 @@ ditto /Volumes/Evaluation\ environment\ for\ Windows\ games\ 2.0/redist/lib/exte
 
 This is silent on success.
 
-Now you are ready to install Steam (use a Terminal that is opened by the "Game Porting Toolkit" application!
+Now you are ready to install Steam (use a Terminal that is opened by the "Game Porting Toolkit" application!)
 
 ```bash
 MTL_HUD_ENABLED=0 WINEESYNC=1 wine ~/Downloads/SteamSetup.exe
@@ -124,6 +124,7 @@ MTL_HUD_ENABLED=0 WINEESYNC=1 /Applications/Game\ Porting\ Toolkit.app/Contents/
 Add an icon to the shortcut, and you are ready to go. The shortcut can be put into the dock, and now you simply can directly start Steam for Windows! 
 (Right-click the shortcut script in the 'Shortcuts' app and select 'Add to dock' to create shortcut for your shortcut in the Shortcuts app...)
 
+Just be patient when starting Steam, it takes quite a long time!
 
 ### References
 
