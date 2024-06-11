@@ -254,7 +254,7 @@ Add an icon to the shortcut, and you are ready to go. The shortcut can be put in
 
 ### Uninstallation notes
 
-- Uninstall the Intel version of homebrew, enter a x86 shell with `arch -x86_64 zsh`, following [this link to the uninstall-script](https://docs.brew.sh/FAQ#how-do-i-uninstall-homebrew). There are different deinstall scripts listed. Use the last option that allows selecting the prefix `/usr/local` to make sure that you remove the correct Homebrew version. Execute this script from a X86-64 Shell created with `arch -x86_64 zsh`.
+- Uninstall the Intel version of homebrew, enter a x86 shell with `arch -x86_64 zsh`, following [this link to the uninstall-script](https://github.com/homebrew/install#uninstall-homebrew). There are three different deinstall scripts listed, you'll want the last one that selects the specific homebrew x86 version at `/usr/local`. Use the last option that allows selecting the prefix `/usr/local` to make sure that you remove the correct Homebrew version. Execute this script from a X86-64 Shell created with `arch -x86_64 zsh`.
 - Simply remove the directory tree that holds your wine-prefix: remove `~/Win10`.
 - Note: If you want to reinstall, make sure to _reboot once_ to remove any remaining steam or setup processes from memory.
 
@@ -265,6 +265,7 @@ Add an icon to the shortcut, and you are ready to go. The shortcut can be put in
 
 ### History
 
+- 2024-06-11: Apple releases `game_porting_toolkit` 2.0 beta 1.
 - 2024-03-26: Apple's `game_porting_toolit` requires Command Line Tools version 15.1 to build successfully, newer versions are not (yet) supported.
 - 2024-03-24: Apple's `game_porting_toolkit` is broken, the project currently doesn't install until the build is fixed by Apple.
 - 2024-03-08: macOS 14.4 testet ok.
