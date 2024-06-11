@@ -11,7 +11,7 @@ This guide is only tested for Apple Silicon machines.
 ## Latest tested versions
 
 - 2024-06-11: ![Note:](http://img.shields.io/badge/✅-Info-green.svg?style=flat) New version 2.0 beta available, and while the built process has _not_ been fixed, it's possible to install Steam relying on old prebuilt toolkits that we will manually update. 
-- 2024-06-03: ![Note:](http://img.shields.io/badge/🛑-Error-red.svg?style=flat) Unfortunately Apple's installation is currently broken when not using a 3rd-party pre-built toolkit.
+- 2024-06-03: ![Note:](http://img.shields.io/badge/🛑-Error-red.svg?style=flat) Unfortunately Apple's installation is currently broken when not using a 3rd-party pre-built toolkit. The self-builder instructions have been moved [here](https://github.com/domschl/WinSteamOnMac/blob/main/self-builder.md) (build is broken!).
 - 2024-03-24: ![Note:](http://img.shields.io/badge/⚠️-Warning-orange.svg?style=flat) Apple's `game-porting-toolkit` currently requires an older version of Apple's command line tool (version 15.1) in order to install successfully! Current Xcode 15.3 __will not work__!
 
 ## Preparations:
