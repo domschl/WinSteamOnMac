@@ -10,9 +10,7 @@ This guide is only tested for Apple Silicon machines.
 
 ## Latest tested versions
 
-- 2024-06-11: ![Note:](http://img.shields.io/badge/✅-Info-green.svg?style=flat) New version 2.0 beta available, and while the built process has _not_ been fixed, it's possible to install Steam relying on old prebuilt toolkits that we will manually update. 
-- 2024-06-03: ![Note:](http://img.shields.io/badge/🛑-Error-red.svg?style=flat) Unfortunately Apple's installation is currently broken when not using a 3rd-party pre-built toolkit. The self-builder instructions have been moved [here](https://github.com/domschl/WinSteamOnMac/blob/main/self-builder.md) (build is broken!).
-- 2024-03-24: ![Note:](http://img.shields.io/badge/⚠️-Warning-orange.svg?style=flat) Apple's `game-porting-toolkit` currently requires an older version of Apple's command line tool (version 15.1) in order to install successfully! Current Xcode 15.3 __will not work__!
+- 2024-06-11: ![Note:](http://img.shields.io/badge/✅-Info-green.svg?style=flat) New version of the Game Porting Toolkit 2.0 beta is available with new graphics drivers, and while the manual built process has _not_ been fixed, it's possible to install Steam relying on old prebuilt toolkits that we will manually update with the newest graphics drivers to run Windows Steam. Installation is tested with macOS 14.5, Game Porting Toolkit 2.0 beta and GCenX's prebuilt kits.
 
 ## Preparations:
 
@@ -134,7 +132,7 @@ Just be patient when starting Steam, it takes quite a long time!
 
 ### History
 
-- 2024-06-11: Apple releases `game_porting_toolkit` 2.0 beta 1, self-built is __still__ broken, but a work-around is available using a pre-built toolkit.
+- 2024-06-11: Apple releases `game_porting_toolkit` 2.0 beta 1, self-built is __still__ broken, but a work-around is available using a pre-built toolkit. The self-builder instructions have been moved [here](https://github.com/domschl/WinSteamOnMac/blob/main/self-builder.md) (build is broken!).
 - 2024-03-26: Apple's `game_porting_toolit` requires Command Line Tools version 15.1 to build successfully, newer versions are not (yet) supported.
 - 2024-03-24: Apple's `game_porting_toolkit` is broken, the project currently doesn't install until the build is fixed by Apple.
 - 2024-03-08: macOS 14.4 testet ok.
