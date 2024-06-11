@@ -80,7 +80,7 @@ This installs a macOS Application "Game Porting Toolkit" based on the old workin
 
 to verify everything is working. Close Winecfg and start with the update procedure to the latest drivers.
 
-Make sure that you have opened the "Evalutaion environment for Windows Games". You should see a folder at `/Volumes/Evaluation environment for Windows games 2.0`. Then start the update:
+Make sure that you have opened the "Evaluation environment for Windows Games". You should see a folder at `/Volumes/Evaluation environment for Windows games 2.0`. Then start the update:
 
 ```bash
 cd /Applications/Game\ Porting\ Toolkit.app/Contents/Resources/wine/lib/external
