@@ -114,14 +114,18 @@ MTL_HUD_ENABLED=0 WINEESYNC=1 wine ~/Downloads/SteamSetup.exe
 
 After some time, the Steam login appears!
 
-Steam has been installed into the wine prefix at `~/.wine` and you can start Steam again from the terminal that is been opened by the Application "Game Porting Toolkit" with:
+Steam has been installed into the wine prefix at `~/.wine` and your Toolkit software resides within the application "Game Porting Toolkit". From any Terminal, you can now start Steam with:
 
 ```bash
-MTL_HUD_ENABLED=0 WINEESYNC=1 wine ./
+MTL_HUD_ENABLED=0 WINEESYNC=1 /Applications/Game\ Porting\ Toolkit.app/Contents/Resources/wine/bin/wine ~/.wine/drive_c/Program\ Files\ \(x86\)/Steam/steam.exe
+```
+
+This takes some times, but then Steam starts.
 
 -----------------------
 
 ### Built yourself __(currently broken)__
+
 Now we install Apple's homebrew tap:
 
 ```bash
