@@ -10,8 +10,7 @@ This guide is only tested for Apple Silicon machines.
 
 ## Latest tested versions
 
-- 2024-06-11: ![Note:](http://img.shields.io/badge/✅-Info-gree.svg?style=flat) New version 2.0 beta available! Test in progress. This guide will be updated soon.
-- 2024-06-11: macOS Sonoma 14.5 and Apple `Game Porting Toolkit 2.0 Beta` (release of 2024-06-10), Command Line Tools **15.1** (only!).
+- 2024-06-11: ![Note:](http://img.shields.io/badge/🛑-Error-red.svg?style=flat) New version 2.0 beta available, but compilation of the toolkit _still fails_, which is not exactly suprising, since the homebrew formula hasn't been updated, and still uses the broken 1.1 version. 
 - 2024-06-03: ![Note:](http://img.shields.io/badge/🛑-Error-red.svg?style=flat) Unfortunately Apple's installation is currently broken. This guide doesn't work until the cause has been identified and fixed! See [Issue 9](https://github.com/domschl/WinSteamOnMac/issues/9) for details.
 - 2024-03-24: ![Note:](http://img.shields.io/badge/⚠️-Warning-orange.svg?style=flat) Apple's `game-porting-toolkit` currently requires an older version of Apple's command line tool (version 15.1) in order to install successfully! Current Xcode 15.3 __will not work__!
 
