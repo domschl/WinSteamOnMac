@@ -86,6 +86,7 @@ Make sure that you have opened the "Evalutaion environment for Windows Games". Y
 cd /Applications/Game\ Porting\ Toolkit.app/Contents/Resources/wine/lib/external
 mv D3DMetal.framework D3DMetal.framework-old; mv libd3dshared.dylib libd3dshared.dylib-old
 ditto /Volumes/Evaluation\ environment\ for\ Windows\ games\ 2.0/redist/lib/external/ .
+```
 
 This is silent on success.
 
