@@ -270,6 +270,7 @@ Add an icon to the shortcut, and you are ready to go. The shortcut can be put in
 
 - Good collection of information: [Apple Gaming Wiki](https://www.applegamingwiki.com/wiki/Game_Porting_Toolkit)
 - A 'batteries-included' GUI version to get the game-porting-toolkit running: [Whisky](https://github.com/Whisky-App/Whisky)
+- Pre-built versions of the toolkit are available at [Gcenx repository](https://github.com/Gcenx/game-porting-toolkit/releases)
 
 ### History
 
