@@ -16,28 +16,15 @@ This guide is only tested for Apple Silicon machines.
 
 ## Preparations:
 
-- Go to [Apple Games](https://developer.apple.com/games/) in order to download the [Game Porting Toolkit](https://developer.apple.com/download/all/?q=game%20porting%20toolkit). There are two possible downloads: "Evaluation environment for Windows games 2.0 beta" and "Game porting toolkit 2.0 beta" which is larger and contains the 'Evaluation environment' too. We will need the "Evaluation environment for Windows games 2.0" only.
-- If you want to try to build the toolkit yourself (currently broken!): Command Line Tools for Xcode **15.1** are required to be able to install `Game Porting Toolkit`. **WARNING** Apple's `game-porting-toolkit` currently fails to built with _all_ versions, so use a prebuilt toolkit for the time being.
-  
-> #### Get the correct command line tools (optional, only for self-builders, won't work anyway)
->
-> Get the command line tools here [Command line tools 15.1](https://download.developer.apple.com/Developer_Tools/Command_Line_Tools_for_Xcode_15.1/Command_Line_Tools_for_Xcode_15.1.dmg)
->
-> If you have Xcode concurrent to command line tools installed, you can use `xcode-select -p` to check which version is active. The correct output after installation of command line tools 15.1 should be: `/Library/Developer/CommandLineTools`. In case a path to Xcode is shown, you can can correct the path with:
->
-> ```
-> sudo xcode-select -s /Library/Developer/CommandLineTools`.
-> ```
+- Go to [Apple Games](https://developer.apple.com/games/) in order to download the [Game Porting Toolkit](https://developer.apple.com/download/all/?q=game%20porting%20toolkit). There are two possible downloads: "Evaluation environment for Windows games 2.0 beta" and "Game porting toolkit 2.0 beta". The later is larger and contains the 'Evaluation environment' too. We will need the "Evaluation environment for Windows games 2.0" only.
 
-#### Continue with preparations
-
-The "Evaluation environment for Windows games 2.0" (contained in Game Porting Toolkit 2 or downloaded stand-alone) contains a Readme that outlines the installation process, but here we will customize it, in order to run Steam.
+The "Evaluation environment for Windows games 2.0" contains a Readme that outlines the installation process, but here we will customize it, in order to run Steam.
 
 - [Download Steam](https://store.steampowered.com/about/download). Make sure to download the [Windows setup](https://cdn.akamai.steamstatic.com/client/installer/SteamSetup.exe), and not the (default) Mac version. You should now have a file `SteamSetup.exe`.
 
 ## Step-by-step installation
 
-- The minimum macOS version is macOS Sonoma 14.5, prebuilt game-porting-toolkit and Game Porting Toolkit 2
+- The minimum macOS version is macOS Sonoma 14.5, a prebuilt game-porting-toolkit and Game Porting Toolkit 2
 - This guide only applies to Apple Silicon Macs. No Intel support.
 - Open a terminal (or iTerm2)
 - Make sure that rosetta is installed by entering:
@@ -87,7 +74,7 @@ Use [Dean Greer's (GCenX)](https://github.com/Gcenx/game-porting-toolkit) versio
 brew86 install --cask --no-quarantine gcenx/wine/game-porting-toolkit
 ```
 
-This installs a graphical Application "Game Porting Toolkit" based on the old working binaries that opens a pre-configured terminal with all the game-porting tools. Go to macOS 'Applications' and open "Game Porting Toolkit". In the terminal window that gets started by the application, enter:
+This installs a macOS Application "Game Porting Toolkit" based on the old working binaries that opens a pre-configured terminal with all the game-porting tools. Go to macOS 'Applications' and open "Game Porting Toolkit". In the terminal window that gets started by the application, enter:
 
 `wine winecfg`
 
@@ -102,7 +89,7 @@ ditto /Volumes/Evaluation\ environment\ for\ Windows\ games\ 2.0/redist/lib/exte
 
 This is silent on success.
 
-Now you are ready to install Steam:
+Now you are ready to install Steam (use a Terminal that is opened by the "Game Porting Toolkit" application!
 
 ```bash
 MTL_HUD_ENABLED=0 WINEESYNC=1 wine ~/Downloads/SteamSetup.exe
@@ -110,7 +97,7 @@ MTL_HUD_ENABLED=0 WINEESYNC=1 wine ~/Downloads/SteamSetup.exe
 
 After some time, the Steam login appears!
 
-Steam has been installed into the wine prefix at `~/.wine` and your Toolkit software resides within the application "Game Porting Toolkit". From any Terminal, you can now start Steam with:
+Steam has been installed into the wine prefix at `~/.wine` and your Toolkit software resides within the application "Game Porting Toolkit". From any Terminal, you can now start Steam directly with:
 
 ```bash
 MTL_HUD_ENABLED=0 WINEESYNC=1 /Applications/Game\ Porting\ Toolkit.app/Contents/Resources/wine/bin/wine ~/.wine/drive_c/Program\ Files\ \(x86\)/Steam/steam.exe
@@ -122,6 +109,19 @@ This takes some times, but then Steam starts.
 
 ### Built yourself __(currently broken)__
 
+- If you want to try to build the toolkit yourself (currently broken!): Command Line Tools for Xcode **15.1** are required to be able to install `Game Porting Toolkit`. **WARNING** Apple's `game-porting-toolkit` currently fails to built with _all_ versions, so use a prebuilt toolkit for the time being.
+  
+> #### Get the correct command line tools (optional, only for self-builders, won't work anyway)
+>
+> Get the command line tools here [Command line tools 15.1](https://download.developer.apple.com/Developer_Tools/Command_Line_Tools_for_Xcode_15.1/Command_Line_Tools_for_Xcode_15.1.dmg)
+>
+> If you have Xcode concurrent to command line tools installed, you can use `xcode-select -p` to check which version is active. The correct output after installation of command line tools 15.1 should be: `/Library/Developer/CommandLineTools`. In case a path to Xcode is shown, you can can correct the path with:
+>
+> ```
+> sudo xcode-select -s /Library/Developer/CommandLineTools`.
+> ```
+
+#### Continue with preparations
 Now we install Apple's homebrew tap:
 
 ```bash
