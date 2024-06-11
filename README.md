@@ -10,25 +10,29 @@ This guide is only tested for Apple Silicon machines.
 
 ## Latest tested versions
 
-- 2024-06-11: ![Note:](http://img.shields.io/badge/⚠️-Warning-orange.svg?style=flat) New version 2.0 beta available! Test in progress. This guide will be updated soon.
+- 2024-06-11: ![Note:](http://img.shields.io/badge/✅-Info-gree.svg?style=flat) New version 2.0 beta available! Test in progress. This guide will be updated soon.
+- 2024-06-11: macOS Sonoma 14.5 and Apple `Game Porting Toolkit 2.0 Beta` (release of 2024-06-10), Command Line Tools **15.1** (only!).
 - 2024-06-03: ![Note:](http://img.shields.io/badge/🛑-Error-red.svg?style=flat) Unfortunately Apple's installation is currently broken. This guide doesn't work until the cause has been identified and fixed! See [Issue 9](https://github.com/domschl/WinSteamOnMac/issues/9) for details.
 - 2024-03-24: ![Note:](http://img.shields.io/badge/⚠️-Warning-orange.svg?style=flat) Apple's `game-porting-toolkit` currently requires an older version of Apple's command line tool (version 15.1) in order to install successfully! Current Xcode 15.3 __will not work__!
-- 2024-03-08: the combination of macOS Sonoma 14.4 and Apple `Game Porting Toolkit` 1.1 (release of 2023-11-15), Xcode 15.
 
 ## Preparations:
 
-- Go to [Apple Games](https://developer.apple.com/games/) in order to download the [Game Porting Toolkit](https://developer.apple.com/download/all/?q=game%20porting%20toolkit)
+- Go to [Apple Games](https://developer.apple.com/games/) in order to download the [Game Porting Toolkit](https://developer.apple.com/download/all/?q=game%20porting%20toolkit). There are two possible downloads: "Evaluation environment for Windows games 2.0 beta" and "Game porting toolkit 2.0 beta" which is larger and contains the 'Evaluation environment' too. We will need the "Evaluation environment for Windows games 2.0" only.
 - Command Line Tools for Xcode **15.1** are required to be able to install `Game Porting Toolkit`. **WARNING** Apple's `game-porting-toolkit` __fails to build with current Xcode or Command line tools newer than 15.1, you **must** use the older version 15.1__ to be able to build the toolkit successfully. You can decide to keep the recent Xcode, and install the older command line tools additionally and use `xcode-select -s` to switch between versions.
 
 > #### Get the correct command line tools
 >
 > Get the command line tools here [Command line tools 15.1](https://download.developer.apple.com/Developer_Tools/Command_Line_Tools_for_Xcode_15.1/Command_Line_Tools_for_Xcode_15.1.dmg)
 >
-> If you have Xcode concurrent to command line tools installed, you can use `xcode-select -p` to check which version is active. The correct output after installation of command line tools 15.1 should be: `/Library/Developer/CommandLineTools`. In case a path to Xcode is shown, you can can correct the path with `xcode-select -s /Library/Developer/CommandLineTools`.
+> If you have Xcode concurrent to command line tools installed, you can use `xcode-select -p` to check which version is active. The correct output after installation of command line tools 15.1 should be: `/Library/Developer/CommandLineTools`. In case a path to Xcode is shown, you can can correct the path with:
+>
+> ```
+> sudo xcode-select -s /Library/Developer/CommandLineTools`.
+> ```
 
-#### Continue with installation
+#### Continue with preparations
 
-The Game Porting Toolkit contains a Readme that outlines the installation process, but here we will customize it, in order to run Steam.
+The "Evaluation environment for Windows games 2.0" (contained in Game Porting Toolkit 2 or downloaded stand-alone) contains a Readme that outlines the installation process, but here we will customize it, in order to run Steam.
 
 - [Download Steam](https://store.steampowered.com/about/download). Make sure to download the [Windows setup](https://cdn.akamai.steamstatic.com/client/installer/SteamSetup.exe), and not the (default) Mac version. You should now have a file `SteamSetup.exe`.
 
@@ -36,7 +40,7 @@ The Game Porting Toolkit contains a Readme that outlines the installation proces
 
 **Note:** See `Update notes` below, if you did already install an older version!
 
-- The minimum macOS version is macOS Sonoma 14.1, Xcode 15.1 (or Command Line Tools 15.1, newer versions __not supported__), Game Porting Toolkit v1.1
+- The minimum macOS version is macOS Sonoma 14.5, Command Line Tools 15.1 (newer versions of command line tool are __not supported__), Game Porting Toolkit 2
 - This guide only applies to Apple Silicon Macs. No Intel support.
 - Open a terminal (or iTerm2)
 - Make sure that rosetta is installed by entering:
@@ -82,10 +86,17 @@ Now we install Apple's homebrew tap:
 
 ```bash
 brew86 tap apple/apple http://github.com/apple/homebrew-apple
+```
+
+and install the toolkit:
+
+```bash
 brew86 -v install apple/apple/game-porting-toolkit
 ```
 
-> **Note:** This starts a rather lengthy install- and compilation process that takes a long time! The compilation process (which can take an hour or more depending on your machine) finished with:
+> **Note:** This starts a rather lengthy install- and compilation process that takes a long time! The compilation process (which can take an hour or more depending on your machine) finished with. It will compile ancient compiler versions required first and then setup a specific version of `wine` tools that allow Windows programs to run on macOS.
+
+If the build is successful, you should see:
 
 ```
 ==> game-porting-toolkit
@@ -99,7 +110,7 @@ Instead, in order to continue the initial installation, skip down to **Continue 
 > **Note:** This section is only for updates to a new version, once the complete installation was finished successfully before.
 > For initial installation, continue with **Continue with initial installation**.
 
-- Make sure to use both the latest release of macOS Sonoma, the latest latest release of `game-porting-toolkit`, and updated versions of Command Line Tools for Xcode (or full Xcode itself) together.
+- Make sure to use both the latest release of macOS Sonoma, the latest latest release of `game-porting-toolkit`, and precise version 15.1 of the Command Line Tools for Xcode. 15.1 is the only supported version!
 
 If you want to update your x86 homebrew at a later point, start an x86 shell in Terminal with:
 
@@ -121,13 +132,11 @@ brew86 upgrade
 This will update your x86 homebrew environment and automatically build the latest `game-porting-toolkit`.
 Remember, the build process will take about 30min even on a very fast machine!
 
-Then you will need to download the latest [Game Porting Toolkit](https://developer.apple.com/download/all/?q=game%20porting%20toolkit) from apple to update the libraries in your wine prefix. Open the download and:
+Then you will need to download the latest [Game Porting Toolkit](https://developer.apple.com/download/all/?q=game%20porting%20toolkit) (select the "Evaluation environment for Windows games 2.0 beta") or the game porting toolkit, which contains the former too, to update the libraries in your wine prefix. Open the download and:
 
 ```bash
-ditto /Volumes/Game\ Porting\ Toolkit-1.1/redist/lib/ `brew86 --prefix game-porting-toolkit`/lib/
+ditto /Volumes/Evaluation\ Environment\ For\ Windows\ Games-2.0/redist/lib/ `brew --prefix game-porting-toolkit`/lib/
 ```
-
-> **Note:** The layout of the game porting toolkit changed between beta 3 and beta 4, since beta 4 the libraries are now in `redist/lib` (beta3 and earlier: just `lib`). Also adapt the version of the Toolkit, if necessary.
 
 That's all that's needed for an update. Below information applies only to the initial installation.
 
@@ -174,14 +183,13 @@ This should start the `winecfg` program, a small setup for our `wine` environmen
 From your Terminal, it should be available at:
 
 ```bash
-ls /Volumes/Game\ Porting\ Toolkit-1.1/
+ls /Volumes/Evaluation\ Environment\ For\ Windows\ Games-2.0
 ```
 
 Make sure you see the files of the toolkit and then:
 
 ```bash
-ditto /Volumes/Game\ Porting\ Toolkit-1.1/redist/lib/ `brew86 --prefix game-porting-toolkit`/lib/
-```
+ditto /Volumes/Evaluation\ Environment\ For\ Windows\ Games-2.0/redist/lib/ `brew --prefix game-porting-toolkit`/lib/```
 
 This (silently) copies the required apple libraries into your `wine` installation. Note that since beta-4, the libs on the image from Apple are in `redist/lib` (older Beta versions: `lib`)
 
