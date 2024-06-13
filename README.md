@@ -8,9 +8,12 @@ We will make sure that our existing environment (and the Apple silicon version o
 
 This guide is only tested for Apple Silicon machines.
 
+![Security warning:](http://img.shields.io/badge/Warning-orange.svg?style=flat): Apple's original build script uses heavily patched infrastructure components outdated since years for network, cryptography and security. Please review [Apple's homebrew recipe](https://raw.githubusercontent.com/apple/homebrew-apple/main/Formula/game-porting-toolkit.rb) yourself, which contains a long list of outdated patches in a 3.4MB ruby script. It installs network stacks (e.g. openssl 1.1) that are EoL since quite some time.
+
 ## Latest tested versions
 
 - 2024-06-11: ![Note:](http://img.shields.io/badge/✅-Info-green.svg?style=flat) New version of the Game Porting Toolkit 2.0 beta is available with new graphics drivers, and while the manual built process has _not_ been fixed, it's possible to install Steam relying on old prebuilt toolkits that we will manually update with the newest graphics drivers to run Windows Steam. Installation is tested with macOS 14.5, Game Porting Toolkit 2.0 beta and GCenX's prebuilt kits.
+- See [Issue 4](https://github.com/domschl/WinSteamOnMac/issues/9) for an ongoing discussion of current build problems, and [here for the Discussion at Apple](https://forums.developer.apple.com/forums/thread/748129).
 
 ## Preparations:
 
