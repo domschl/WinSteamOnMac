@@ -13,7 +13,7 @@ This guide is only tested for Apple Silicon machines.
 ## Latest tested versions
 
 - 2024-06-11: ![Note:](http://img.shields.io/badge/✅-Info-green.svg?style=flat) New version of the Game Porting Toolkit 2.0 beta is available with new graphics drivers, and while the manual built process has _not_ been fixed, it's possible to install Steam relying on old prebuilt toolkits that we will manually update with the newest graphics drivers to run Windows Steam. Installation is tested with macOS 14.5, Game Porting Toolkit 2.0 beta and GCenX's prebuilt kits.
-- See [Issue 4](https://github.com/domschl/WinSteamOnMac/issues/9) for an ongoing discussion of current build problems, and [here for the Discussion at Apple](https://forums.developer.apple.com/forums/thread/748129).
+- See [Issue 4](https://github.com/domschl/WinSteamOnMac/issues/9) for an ongoing discussion of current build problems, and [here for the Discussion at Apple](https://forums.developer.apple.com/forums/thread/748129). The documentation for the currently broken [manual build is here](https://github.com/domschl/WinSteamOnMac/blob/main/self-builder.md)
 
 ## Preparations:
 
