@@ -8,24 +8,19 @@ We will make sure that our existing environment (and the Apple silicon version o
 
 This guide is only tested for Apple Silicon machines.
 
-![Security warning:](http://img.shields.io/badge/Warning-orange.svg?style=flat): Apple's original build script uses heavily patched infrastructure components outdated since years for network, cryptography and security. Please review [Apple's homebrew recipe](https://raw.githubusercontent.com/apple/homebrew-apple/main/Formula/game-porting-toolkit.rb) yourself, which contains a long list of outdated patches in a 3.4MB ruby script. It installs network stacks (e.g. openssl 1.1) that are EoL since quite some time.
+![Security warning:](http://img.shields.io/badge/Warning-orange.svg?style=flat): [Apple's homebrew recipe](https://raw.githubusercontent.com/apple/homebrew-apple/main/Formula/game-porting-toolkit.rb) uses heavily patched infrastructure components and is currently broken. This guide uses a prebuilt toolkit.
 
 ## Latest tested versions
 
-- 2024-06-11: ![Note:](http://img.shields.io/badge/✅-Info-green.svg?style=flat) New version of the Game Porting Toolkit 2.0 beta is available with new graphics drivers, and while the manual built process has _not_ been fixed, it's possible to install Steam relying on old prebuilt toolkits that we will manually update with the newest graphics drivers to run Windows Steam. Installation is tested with macOS 14.5, Game Porting Toolkit 2.0 beta and GCenX's prebuilt kits.
-- See [Issue 4](https://github.com/domschl/WinSteamOnMac/issues/9) for an ongoing discussion of current build problems, and [here for the Discussion at Apple](https://forums.developer.apple.com/forums/thread/748129). The documentation for the currently broken [manual build is here](https://github.com/domschl/WinSteamOnMac/blob/main/self-builder.md)
+- 2024-06-15: macOS 14.5 and the prebuilt `game_porting_toolkit` versions provided by [Dean Greer (GCenX)](https://github.com/Gcenx/game-porting-toolkit) which includes the latest 2.0 beta drivers for easy & up-to-date installation, it's no longer necessary (and anyway broken) to build the toolkit yourself, and all necessary components are included CGenX's build, so no longer necessary to download Apple's toolkit, Xcode or Command Line Toolkits.
 
 ## Preparations:
-
-- Go to [Apple Games](https://developer.apple.com/games/) in order to download the [Game Porting Toolkit](https://developer.apple.com/download/all/?q=game%20porting%20toolkit). There are two possible downloads: "Evaluation environment for Windows games 2.0 beta" and "Game porting toolkit 2.0 beta". The later is larger and contains the 'Evaluation environment' too. We will need the "Evaluation environment for Windows games 2.0" only.
-
-The "Evaluation environment for Windows games 2.0" contains a Readme that outlines the installation process, but here we will customize it, in order to run Steam.
 
 - [Download Steam](https://store.steampowered.com/about/download). Make sure to download the [Windows setup](https://cdn.akamai.steamstatic.com/client/installer/SteamSetup.exe), and not the (default) Mac version. You should now have a file `SteamSetup.exe`.
 
 ## Step-by-step installation
 
-- The minimum macOS version is macOS Sonoma 14.5, a prebuilt game-porting-toolkit and Game Porting Toolkit 2
+- The minimum macOS version is macOS Sonoma 14.5, a prebuilt game-porting-toolkit and Game Porting Toolkit 2 will be downloaded later
 - This guide only applies to Apple Silicon Macs. No Intel support.
 - Open a terminal (or iTerm2)
 - Make sure that rosetta is installed by entering:
@@ -81,17 +76,23 @@ This installs a macOS Application "Game Porting Toolkit" based on the old workin
 
 to verify everything is working. Close Winecfg and start with the update procedure to the latest drivers.
 
-Make sure that you have opened the "Evaluation environment for Windows Games". You should see a folder at `/Volumes/Evaluation environment for Windows games 2.0`. Then start the update:
+### Updating the drivers (OPTIONAL, currently not necessary)
 
-```bash
-cd /Applications/Game\ Porting\ Toolkit.app/Contents/Resources/wine/lib/external
-mv D3DMetal.framework D3DMetal.framework-old; mv libd3dshared.dylib libd3dshared.dylib-old
-ditto /Volumes/Evaluation\ environment\ for\ Windows\ games\ 2.0/redist/lib/external/ .
-```
+Since CGenc's toolkit already contains the 2.0 beta drivers, it's currently not necessary to manually update the drivers. Skip to **Steam installation**, if current version of toolkit is 2.0 beta.
 
-This is silent on success.
+> Make sure that you have opened the "Evaluation environment for Windows Games". You should see a folder at `/Volumes/Evaluation environment for Windows games 2.0`. Then start the update:
+>
+> ```bash
+> cd /Applications/Game\ Porting\ Toolkit.app/Contents/Resources/wine/lib/external
+> mv D3DMetal.framework D3DMetal.framework-old; mv libd3dshared.dylib libd3dshared.dylib-old
+> ditto /Volumes/Evaluation\ environment\ for\ Windows\ games\ 2.0/redist/lib/external/ .
+> ```
+>
+> This is silent on success.
 
-Now you are ready to install Steam (use a Terminal that is opened by the "Game Porting Toolkit" application!)
+### Steam installation
+
+Now you are ready to install Steam. Again, use a Terminal that is opened by the "Game Porting Toolkit" application in your `Applications` folder, not the default terminal. Enter;
 
 ```bash
 MTL_HUD_ENABLED=0 WINEESYNC=1 wine ~/Downloads/SteamSetup.exe
@@ -132,6 +133,7 @@ Just be patient when starting Steam, it takes quite a long time!
 - Good collection of information: [Apple Gaming Wiki](https://www.applegamingwiki.com/wiki/Game_Porting_Toolkit)
 - A 'batteries-included' GUI version to get the game-porting-toolkit running: [Whisky](https://github.com/Whisky-App/Whisky)
 - Pre-built versions of the toolkit are available at [Gcenx repository](https://github.com/Gcenx/game-porting-toolkit/releases)
+- [Apple Games](https://developer.apple.com/games/) hosts the original [Game Porting Toolkit](https://developer.apple.com/download/all/?q=game%20porting%20toolkit). There are two possible downloads: "Evaluation environment for Windows games 2.0 beta" and "Game porting toolkit 2.0 beta". The later is larger and contains the 'Evaluation environment' too. We will need the "Evaluation environment for Windows games 2.0" only. The "Evaluation environment for Windows games 2.0" contains a Readme that outlines the installation process, but here we will customize it, in order to run Steam.
 
 ### History
 
