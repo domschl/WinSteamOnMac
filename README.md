@@ -137,6 +137,7 @@ Just be patient when starting Steam, it takes quite a long time!
 
 ### History
 
+- 2024-06-15: Installation based on [Gcenx repository](https://github.com/Gcenx/game-porting-toolkit) is now even easier, since it already contains the toolkit components.
 - 2024-06-11: Apple releases `game_porting_toolkit` 2.0 beta 1, self-built is __still__ broken, but a work-around is available using a pre-built toolkit. The self-builder instructions have been moved [here](https://github.com/domschl/WinSteamOnMac/blob/main/self-builder.md) (build is broken!).
 - 2024-03-26: Apple's `game_porting_toolit` requires Command Line Tools version 15.1 to build successfully, newer versions are not (yet) supported.
 - 2024-03-24: Apple's `game_porting_toolkit` is broken, the project currently doesn't install until the build is fixed by Apple.
