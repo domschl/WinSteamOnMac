@@ -20,7 +20,7 @@ This guide is only tested for Apple Silicon machines.
 
 ## Step-by-step installation
 
-- The minimum macOS version is macOS Sonoma 14.5, a prebuilt game-porting-toolkit and Game Porting Toolkit 2 will be downloaded later
+- The minimum macOS version is macOS Sonoma 14.5, a prebuilt game-porting-toolkit will be downloaded later via homebrew.
 - This guide only applies to Apple Silicon Macs. No Intel support.
 - Open a terminal (or iTerm2)
 - Make sure that rosetta is installed by entering:
@@ -92,7 +92,7 @@ Since CGenc's toolkit already contains the 2.0 beta drivers, it's currently not 
 
 ### Steam installation
 
-Now you are ready to install Steam. Again, use a Terminal that is opened by the "Game Porting Toolkit" application in your `Applications` folder, not the default terminal. Enter;
+Now you are ready to install Steam. Again, use a Terminal that is opened by the "Game Porting Toolkit" application in your `Applications` folder, not the default terminal. Enter:
 
 ```bash
 MTL_HUD_ENABLED=0 WINEESYNC=1 wine ~/Downloads/SteamSetup.exe
