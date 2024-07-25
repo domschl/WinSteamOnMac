@@ -84,7 +84,9 @@ Since CGenc's toolkit already contains the 2.0 beta drivers, it's currently not 
 >
 > ```bash
 > cd /Applications/Game\ Porting\ Toolkit.app/Contents/Resources/wine/lib/external
+> 
 > mv D3DMetal.framework D3DMetal.framework-old; mv libd3dshared.dylib libd3dshared.dylib-old
+>
 > ditto /Volumes/Evaluation\ environment\ for\ Windows\ games\ 2.0/redist/lib/external/ .
 > ```
 >
