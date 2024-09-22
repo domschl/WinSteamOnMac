@@ -143,7 +143,7 @@ After an OS update, you might want:
 Switch to X86 console:
 
 ```bash
-arch -x86_64 zsh 
+arch -x86_64 zsh  
 ```
 
 Add an alias:
@@ -161,10 +161,22 @@ brew86 upgrade
 Reinstall or upgrade [Dean Greer's (GCenX) game-porting-toolkit](https://github.com/Gcenx/game-porting-toolkit) Use `upgrade` instead of `install` below to simply look for upgrades of the toolkit:
 
 ```bash
+brew86 upgrade --cask --no-quarantine gcenx/wine/game-porting-toolkit
+```
+***or***
+```bash
 brew86 install --cask --no-quarantine gcenx/wine/game-porting-toolkit
 ```
 
 Note: if `install` fails, because there are still debris of old versions, (Errors like "`wine already exists`"), look at `ls /usr/local/bin/wine*` and remove the files that block the install.
+
+Now check that `wine` works correctly:
+
+```bash
+wine winecfg
+```
+
+The Wine setup screen should appear. There's no need to adapt settings in the setup dialog, simply close it with 'OK'.
 
 At last, install a fresh copy of steam, after downloading the _Windows_ version of Steam's setup: `SteamSetup.exe`, then:
 
