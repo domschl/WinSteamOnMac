@@ -12,6 +12,7 @@ This guide is only tested for Apple Silicon machines.
 
 ## Latest tested versions
 
+-2024-09-22: macOS 15.0 and GCenX prebuilt toolkit (see **Update notes**)
 - 2024-06-15: macOS 14.5 and the prebuilt `game_porting_toolkit` versions provided by [Dean Greer (GCenX)](https://github.com/Gcenx/game-porting-toolkit) which includes the latest 2.0 beta drivers for easy & up-to-date installation, it's no longer necessary (and anyway broken) to build the toolkit yourself, and all necessary components are included CGenX's build, so no longer necessary to download Apple's toolkit, Xcode or Command Line Toolkits.
 
 ## Preparations:
@@ -130,6 +131,49 @@ Add an icon to the shortcut, and you are ready to go. The shortcut can be put in
 
 Just be patient when starting Steam, it takes quite a long time!
 
+## Update or repair notes
+
+- Steam should work with macOS 15.0 and Gcenx's version of the game-porting-toolkit.
+- I had to reinstall and update `brew86` _and_ Steam, your mileage might vary.
+
+After an OS update, you might want:
+
+- Make sure that you have Xcode 16 or the v16 Command Line Tools installed. When using Xcode, start Xcode at least once, because Apple only allows to compile code after you accepted their license agreement.
+
+Switch to X86 console:
+
+```bash
+arch -x86_64 zsh 
+```
+
+Add an alias:
+
+```bash
+alias brew86=/usr/local/bin/brew
+```
+
+Upgrade x86 brew:
+
+```bash
+brew86 upgrade
+```
+
+Reinstall or upgrade [Dean Greer's (GCenX) game-porting-toolkit](https://github.com/Gcenx/game-porting-toolkit) Use `upgrade` instead of `install` below to simply look for upgrades of the toolkit:
+
+```bash
+brew86 install --cask --no-quarantine gcenx/wine/game-porting-toolkit
+```
+
+Note: if `install` fails, because there are still debris of old versions, (Errors like "`wine already exists`"), look at `ls /usr/local/bin/wine*` and remove the files that block the install.
+
+At last, install a fresh copy of steam, after downloading the _Windows_ version of Steam's setup: `SteamSetup.exe`, then:
+
+```bash
+MTL_HUD_ENABLED=0 WINEESYNC=1 wine ~/Downloads/SteamSetup.exe
+```
+
+The setup throws quite a number of warning, not-implemented, and error messages. Nevertheless, after waiting patiently for a few minutes, the Steam login should appear!
+
 ### References
 
 - Good collection of information: [Apple Gaming Wiki](https://www.applegamingwiki.com/wiki/Game_Porting_Toolkit)
@@ -139,6 +183,7 @@ Just be patient when starting Steam, it takes quite a long time!
 
 ### History
 
+- 2024-09-22: Retested installation with macOS 15.0 Sequoia, added paragraph 'Update notes'.
 - 2024-06-15: Installation based on [Gcenx repository](https://github.com/Gcenx/game-porting-toolkit) is now even easier, since it already contains the toolkit components.
 - 2024-06-11: Apple releases `game_porting_toolkit` 2.0 beta 1, self-built is __still__ broken, but a work-around is available using a pre-built toolkit. The self-builder instructions have been moved [here](https://github.com/domschl/WinSteamOnMac/blob/main/self-builder.md) (build is broken!).
 - 2024-03-26: Apple's `game_porting_toolit` requires Command Line Tools version 15.1 to build successfully, newer versions are not (yet) supported.
