@@ -12,7 +12,7 @@ This guide is only tested for Apple Silicon machines.
 
 ## Latest tested versions
 
--2024-09-22: macOS 15.0 Sequoia and GCenX prebuilt toolkit (see **Update notes**)
+-2024-09-22: macOS 15.1 Sequoia and GCenX prebuilt toolkit (see **Update notes**)
 - 2024-06-15: macOS 14.5 and the prebuilt `game_porting_toolkit` versions provided by [Dean Greer (GCenX)](https://github.com/Gcenx/game-porting-toolkit) which includes the latest 2.0 beta drivers for easy & up-to-date installation, it's no longer necessary (and anyway broken) to build the toolkit yourself, and all necessary components are included CGenX's build, so no longer necessary to download Apple's toolkit, Xcode or Command Line Toolkits.
 
 ## Preparations:
