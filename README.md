@@ -1,4 +1,4 @@
-# Howto install the Windows version of Steam on macOS Sonoma or Sequoia with Apple Silicon
+# Howto install the Windows version of Steam on Apple Silicon runing macOS Sonoma or Sequoia
 
 We will install the x86 version Homebrew in order to be able to use Apple's modified version of `Wine` and to install the Windows version Steam on Apple Silicon hardware.
 
@@ -22,7 +22,7 @@ This guide is only tested for Apple Silicon machines.
 ## Step-by-step installation
 
 - The minimum macOS version is macOS Sonoma 14.5, a prebuilt game-porting-toolkit will be downloaded later via homebrew.
-- This guide only applies to Apple Silicon Macs. No Intel support.
+- This guide only applies to **Apple Silicon Macs. No Intel support.**
 - Open a terminal (or iTerm2)
 - Make sure that rosetta is installed by entering:
 
