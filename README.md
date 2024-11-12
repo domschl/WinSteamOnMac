@@ -1,6 +1,6 @@
-# Howto install the Windows version of Steam on macOS Sonoma or Sequoia
+# Howto install the Windows version of Steam on macOS Sonoma or Sequoia with Apple Silicon
 
-We will install the x86 version Homebrew in order to be able to use Apple's modified version of `Wine` and to install the Windows version Steam.
+We will install the x86 version Homebrew in order to be able to use Apple's modified version of `Wine` and to install the Windows version Steam on Apple Silicon hardware.
 
 We will make sure that our existing environment (and the Apple silicon version of Homebrew we need for 'serious' work) remains undisturbed.
 
