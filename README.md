@@ -10,8 +10,23 @@ This guide is only tested for Apple Silicon machines.
 
 ![Security warning:](http://img.shields.io/badge/Warning-orange.svg?style=flat): [Apple's homebrew recipe](https://raw.githubusercontent.com/apple/homebrew-apple/main/Formula/game-porting-toolkit.rb) uses heavily patched infrastructure components and is currently broken. This guide uses a prebuilt toolkit.
 
+## Alternative: use Asahi Linux instead of unreliable macOS for gaming
+
+- Given the fact that arbitrary and undocumented and intranspartent updates of Apple's macOS continue to break efforts to use macOS for gaming, and
+- Given the recent progress of graphics support and wine support with Asahi Linux, the recommended path of action is to instead use an [Asahi Linux](https://asahilinux.org/) installation for Steam gaming, see [AAA Gaming on Asahi Linux](https://asahilinux.org/2024/10/aaa-gaming-on-asahi-linux/).
+
+The trade-offs are:
+
+- you'll have a second (excellent!) operating system on your Mac hardware, which requires additional disk space
+- You will need technical skills to install and maintain Asahi Linux
+- The graphics environment for Asahi Linux is still in a very early stage and under heavy development
+- On the plus-side you'll have an **ever-improving, transparent and open operating system to work with**
+
 ## Latest tested versions
+
 - 2024-12-11: ![ERROR:](http://img.shields.io/badge/Error-red.svg?style=flat): This guide is currently broken. Steam setup seems to crash on new installations. Some hints if you want to experiment: `wine` has to be replaced by `wine64` when using the latest (2024/11) beta 3 of GCenX's game-porting-toolkit.
+
+**ALTERNATIVE**: See note on Asahi Linux above.
 
 - 2024-09-22: macOS 15.1 Sequoia and GCenX prebuilt toolkit (see **Update notes**)
 - 2024-06-15: macOS 14.5 and the prebuilt `game_porting_toolkit` versions provided by [Dean Greer (GCenX)](https://github.com/Gcenx/game-porting-toolkit) which includes the latest 2.0 beta drivers for easy & up-to-date installation, it's no longer necessary (and anyway broken) to build the toolkit yourself, and all necessary components are included CGenX's build, so no longer necessary to download Apple's toolkit, Xcode or Command Line Toolkits.
@@ -196,6 +211,7 @@ The setup throws quite a number of warning, not-implemented, and error messages.
 
 ### History
 
+- 2024-12-11: This guide stops recommending to fight against Apple's undocumented and intransparent macOS updates and recommends using Asahi Linux instead.
 - 2024-09-22: Retested installation with macOS 15.0 Sequoia, added paragraph 'Update notes'.
 - 2024-06-15: Installation based on [Gcenx repository](https://github.com/Gcenx/game-porting-toolkit) is now even easier, since it already contains the toolkit components.
 - 2024-06-11: Apple releases `game_porting_toolkit` 2.0 beta 1, self-built is __still__ broken, but a work-around is available using a pre-built toolkit. The self-builder instructions have been moved [here](https://github.com/domschl/WinSteamOnMac/blob/main/self-builder.md) (build is broken!).
