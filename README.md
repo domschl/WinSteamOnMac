@@ -48,10 +48,10 @@ softwareupdate --install-rosetta
 
 Now your Mac is able to execute x86_64 code. This is the basis for all the following installation.
 
-- Now switch to a x86 shell by entering:
+- Now switch to a x86 shell by entering: (Note: zsh is no longer supported for x86!)
 
 ```bash
-arch -x86_64 zsh 
+arch -x86_64 bash
 ```
 
 Type `arch` again, to make sure that you are using Intel. It should **not** show `arm64`, but `i386` ( ;-) )
