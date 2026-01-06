@@ -140,7 +140,7 @@ The script text is:
 
 ```bash
 cd ~/.wine/drive_c
-MTL_HUD_ENABLED=0 WINEESYNC=1 /Applications/Game\ Porting\ Toolkit.app/Contents/Resources/wine/bin/wine ~/.wine/drive_c/Program\ Files\ \(x86\)/Steam/steam.exe
+MTL_HUD_ENABLED=0 WINEESYNC=1 /Applications/Game\ Porting\ Toolkit.app/Contents/Resources/wine/bin/wine64 ~/.wine/drive_c/Program\ Files\ \(x86\)/Steam/steam.exe
 ```
 
 > **Note:** 'Shortcut' might ask you for confirmation, if you want to run scripts, and you need to enable that via the settings-link provided.
@@ -162,7 +162,7 @@ After an OS update, you might want:
 Switch to X86 console:
 
 ```bash
-arch -x86_64 zsh  
+arch -x86_64 bash  
 ```
 
 Add an alias:
@@ -192,7 +192,7 @@ Note: if `install` fails, because there are still debris of old versions, (Error
 Now check that `wine` works correctly:
 
 ```bash
-wine winecfg
+wine64 winecfg
 ```
 
 The Wine setup screen should appear. There's no need to adapt settings in the setup dialog, simply close it with 'OK'.
@@ -200,7 +200,7 @@ The Wine setup screen should appear. There's no need to adapt settings in the se
 At last, install a fresh copy of steam, after downloading the _Windows_ version of Steam's setup: `SteamSetup.exe`, then:
 
 ```bash
-MTL_HUD_ENABLED=0 WINEESYNC=1 wine ~/Downloads/SteamSetup.exe
+MTL_HUD_ENABLED=0 WINEESYNC=1 wine64 ~/Downloads/SteamSetup.exe
 ```
 
 The setup throws quite a number of warning, not-implemented, and error messages. Nevertheless, after waiting patiently for a few minutes, the Steam login should appear!
