@@ -87,9 +87,12 @@ Use [Dean Greer's (GCenX)](https://github.com/Gcenx/game-porting-toolkit) versio
 brew86 install --cask --no-quarantine gcenx/wine/game-porting-toolkit
 ```
 
-This installs a macOS Application "Game Porting Toolkit" based on the old working binaries that opens a pre-configured terminal with all the game-porting tools. Go to macOS 'Applications' and open "Game Porting Toolkit". In the terminal window that gets started by the application, enter:
+This installs a macOS Application "Game Porting Toolkit" based on the old working binaries that opens a pre-configured terminal with all the game-porting tools. 
 
-`wine winecfg`
+- Go to macOS 'Applications' and open "Game Porting Toolkit".
+- In the terminal window that gets started by the application, enter:
+
+`wine64 winecfg`
 
 to verify everything is working. Close Winecfg and start with the update procedure to the latest drivers.
 
@@ -114,7 +117,7 @@ Since CGenc's toolkit already contains the 2.0 beta drivers, it's currently not 
 Now you are ready to install Steam. Again, use a Terminal that is opened by the "Game Porting Toolkit" application in your `Applications` folder, not the default terminal. Enter:
 
 ```bash
-MTL_HUD_ENABLED=0 WINEESYNC=1 wine ~/Downloads/SteamSetup.exe
+MTL_HUD_ENABLED=0 WINEESYNC=1 wine64 ~/Downloads/SteamSetup.exe
 ```
 
 After some time, the Steam login appears!
@@ -122,7 +125,7 @@ After some time, the Steam login appears!
 Steam has been installed into the wine prefix at `~/.wine` and your Toolkit software resides within the application "Game Porting Toolkit". From any Terminal, you can now start Steam directly with:
 
 ```bash
-MTL_HUD_ENABLED=0 WINEESYNC=1 /Applications/Game\ Porting\ Toolkit.app/Contents/Resources/wine/bin/wine ~/.wine/drive_c/Program\ Files\ \(x86\)/Steam/steam.exe
+MTL_HUD_ENABLED=0 WINEESYNC=1 /Applications/Game\ Porting\ Toolkit.app/Contents/Resources/wine/bin/wine64 ~/.wine/drive_c/Program\ Files\ \(x86\)/Steam/steam.exe
 ```
 
 This takes some times, but then Steam starts.
